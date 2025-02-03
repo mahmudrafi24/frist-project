@@ -1,0 +1,21 @@
+class AppIcons {
+  static const String basePathIcons = "assets/icons";
+
+  static const String google = "$basePathIcons/google.svg";
+  static const String apple = "$basePathIcons/apple.svg";
+  static const String eyeUnlock = "$basePathIcons/eyeUnlock.svg";
+  static const String backButton = "$basePathIcons/backButton.svg";
+  static const String exam = "$basePathIcons/exam.svg";
+  static const String mainIcon = "$basePathIcons/mainIcon.svg";
+  static const String material = "$basePathIcons/material.svg";
+  static const String mental_health = "$basePathIcons/mental_health.svg";
+  static const String menu = "$basePathIcons/menu.svg";
+  static const String notification = "$basePathIcons/notification.svg";
+  static const String pregnancy = "$basePathIcons/pregnancy.svg";
+  static const String profile = "$basePathIcons/profile.svg";
+  static const String search = "$basePathIcons/search.svg";
+  static const String study = "$basePathIcons/study.svg";
+  static const String women = "$basePathIcons/women.svg";
+  static const String home = "$basePathIcons/home.svg";
+  static const String men = "$basePathIcons/men.svg";
+}
