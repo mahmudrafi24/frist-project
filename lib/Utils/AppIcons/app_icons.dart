@@ -18,4 +18,13 @@ class AppIcons {
   static const String women = "$basePathIcons/women.svg";
   static const String home = "$basePathIcons/home.svg";
   static const String men = "$basePathIcons/men.svg";
+
+  static const String serachResult = "$basePathIcons/serachResult.svg";
+  static const String forward = "$basePathIcons/forward.svg";
+
+  static const String studybackbutton = "$basePathIcons/studybackbutton.svg";
+
+  static const String casestudybookmark =
+      "$basePathIcons/caseStudyBookMark.svg";
+  static const String caseStudyforward = "$basePathIcons/caseStudyforward.svg";
 }

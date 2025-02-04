@@ -62,4 +62,25 @@ class AppString {
   static const String whealth = "Women Health";
   static const String mentalhealth = "Mental Health";
   static const String pregnancy = "Pregnancy";
+
+  static const String recentsearch1 = "NCLEX PN Exam - 1";
+  static const String recentsearch2 = "NCLEX PN Exam - 2";
+  static const String recentsearch3 = "NCLEX PN Exam - 3";
+  static const String adulthealth = "Adult Health";
+
+  static const String recentsearch = "Recent Search";
+
+  static const String contineuLearn = "Continue Learning";
+  static const String startLearning = "Start Learning";
+
+  static const String studypageappbartitle = "Next Gen Strategy Course";
+
+  static const String courseOneHeading =
+      "Learn everything you need to know about the Next Gen NCLEX. At the end, we'll walk through a full Next Gen case together.";
+  static const String courseTwo = "Case Study";
+  static const String caseTwomsg =
+      "The case studies below are based on the real Next Gen NCLEX. Practice with these so you're ready for the real exam.";
+
+  static const String caseStudytwoDes =
+      "The nurse is caring for a 61-year-old female client in the emergency department.";
 }

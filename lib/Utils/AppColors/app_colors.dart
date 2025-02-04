@@ -103,4 +103,13 @@ class AppColors {
   static const Color bottomnavBg = Color(0xffF3F2F2);
   static const Color textfieldBackgroundColor = Color(0xff9EA2AE);
   static const Color circleBackgroundColor = Color(0xffDCEAFB);
+
+  ///< ========================== This is for Study Color ====================>
+  static const Color contineuborderColor = Color(0xffDFE1E7);
+  static const Color startLearing = Color(0xffEDEFFE);
+
+  static const Color expandedDropdownColor = Color(0xff3745af);
+
+  static const Color studyCardProgressColor = Color(0xffFDC161);
+  static const Color studyCardColor = Color(0xff023F86);
 }

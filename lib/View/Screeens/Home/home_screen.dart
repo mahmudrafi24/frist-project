@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 borderRadius: 8,
                 height: 40,
                 onTapClick: () {
-                  Get.to(SearchScreen());
+                  SearchScreen();
                 },
               ),
               SizedBox(
