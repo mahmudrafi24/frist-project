@@ -71,7 +71,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               height: 300.h,
               padding: EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: AppColors.white600,
+                color: AppColors.white600.withOpacity(0.5),
                 boxShadow: [
                   BoxShadow(
                     color: AppColors.white100.withOpacity(0.7),

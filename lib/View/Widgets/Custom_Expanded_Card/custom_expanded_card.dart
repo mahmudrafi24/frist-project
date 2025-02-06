@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:frist_project/Utils/AppColors/app_colors.dart';
 import 'package:pp_progress_bar/pp_progress_bar.dart';
-
+import '../../../Utils/AppIcons/app_icons.dart';
 import '../Custom_Text/custom_text.dart';
 
 class ExpandableCard extends StatefulWidget {
@@ -12,9 +13,10 @@ class ExpandableCard extends StatefulWidget {
   final double progress;
   final String title;
   final List<String> lessons;
+  final VoidCallback onTap;
 
   const ExpandableCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.lessons,
     required this.progress,
@@ -22,14 +24,16 @@ class ExpandableCard extends StatefulWidget {
     this.completedLesson,
     this.hours,
     this.minutes,
-  }) : super(key: key);
+    required this.onTap,
+  });
 
   @override
-  _ExpandableCardState createState() => _ExpandableCardState();
+  State createState() => _ExpandableCardState();
 }
 
 class _ExpandableCardState extends State<ExpandableCard> {
   bool _isExpanded = false;
+  int? _selectedLessonIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -122,35 +126,57 @@ class _ExpandableCardState extends State<ExpandableCard> {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     child: Column(
-                      children: widget.lessons.map((lesson) {
+                      children: List.generate(widget.lessons.length, (index) {
                         return Padding(
                           padding: const EdgeInsets.symmetric(vertical: 8),
                           child: Column(
                             children: [
                               Row(
                                 children: [
-                                  Icon(Icons.circle,
-                                      size: 8, color: AppColors.white500),
-                                  SizedBox(width: 8),
-                                  CustomText(
-                                    text: lesson,
-                                    fontSize: 12,
-                                    color: AppColors.white500,
+                                  Row(
+                                    children: [
+                                      Radio<int>(
+                                        value: index,
+                                        groupValue: _selectedLessonIndex,
+                                        activeColor: Colors.white,
+                                        onChanged: (int? value) {
+                                          setState(() {
+                                            _selectedLessonIndex = value;
+                                          });
+                                        },
+                                      ),
+                                      SizedBox(width: 5),
+                                      CustomText(
+                                        text: widget.lessons[index],
+                                        fontSize: 12,
+                                        color: AppColors.white500,
+                                      ),
+                                    ],
                                   ),
                                   Spacer(),
-                                  CustomText(
-                                    text: '9:12',
-                                    fontSize: 12,
-                                    color: AppColors.white500,
+                                  Row(
+                                    children: [
+                                      CustomText(
+                                        text: '9:12',
+                                        fontSize: 12,
+                                        color: AppColors.white500,
+                                      ),
+                                      SizedBox(width: 5),
+                                      IconButton(
+                                        onPressed: widget.onTap,
+                                        icon: SvgPicture.asset(
+                                            AppIcons.videoplay,
+                                            fit: BoxFit.cover),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
-                              Divider(
-                                  color: AppColors.white500.withOpacity(0.5)),
+                              Divider(color: AppColors.white600),
                             ],
                           ),
                         );
-                      }).toList(),
+                      }),
                     ),
                   ),
               ],

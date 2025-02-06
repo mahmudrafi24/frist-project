@@ -73,7 +73,7 @@ class _CustomCardCaseStudyTwoState extends State<CustomCardCaseStudyTwo> {
                 ),
               ),
               IconButton(
-                  onPressed: () {},
+                  onPressed: widget.onTap,
                   icon: SvgPicture.asset(widget.image02, fit: BoxFit.cover)),
             ],
           ),

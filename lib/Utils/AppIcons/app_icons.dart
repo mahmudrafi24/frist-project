@@ -27,4 +27,15 @@ class AppIcons {
   static const String casestudybookmark =
       "$basePathIcons/caseStudyBookMark.svg";
   static const String caseStudyforward = "$basePathIcons/caseStudyforward.svg";
+
+  static const String videoplay = "assets/icons/videoplay.svg";
+
+  static const String courseOneClock = "assets/icons/clock.svg";
+
+  static const String correctanswer = "assets/icons/correctAnswer.svg";
+  static const String wronganswer = "assets/icons/wronanswer.svg";
+
+  static const String down = "assets/icons/down.svg";
+
+  static const String up = "assets/icons/up.svg";
 }

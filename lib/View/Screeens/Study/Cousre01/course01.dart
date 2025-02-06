@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:frist_project/Utils/StaticString/static_string.dart';
+import 'package:frist_project/View/Screeens/Study/Cousre01/course_one_video_section.dart';
 import 'package:frist_project/View/Widgets/Custom_Text/custom_text.dart';
 import 'package:get/get.dart';
 
@@ -53,53 +54,32 @@ class _CourseOneState extends State<CourseOne> {
                 textAlign: TextAlign.start,
               ),
               SizedBox(height: 16),
-              ExpandableCard(
-                completedLesson: 2,
-                totalLesson: 6,
-                hours: 3,
-                minutes: 28,
-                progress: 50,
-                title: AppString.studypageappbartitle,
-                lessons: [
-                  'Brainstorming Basics',
-                  'Brainstorming Basics',
-                  'Brainstorming Basics',
-                  'Brainstorming Basics',
-                ],
+              ...List.generate(
+                5,
+                (index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 20),
+                    child: ExpandableCard(
+                      completedLesson: 2,
+                      totalLesson: 6,
+                      hours: 3,
+                      minutes: 28,
+                      progress: 50,
+                      title: AppString.studypageappbartitle,
+                      lessons: [
+                        'Brainstorming Basics',
+                        'Brainstorming Basics',
+                        'Brainstorming Basics',
+                        'Brainstorming Basics',
+                      ],
+                      onTap: () {
+                        Get.to(() => CourseOneVideoSection());
+                      },
+                    ),
+                  );
+                },
               ),
               SizedBox(height: 10),
-              ExpandableCard(
-                completedLesson: 2,
-                totalLesson: 6,
-                hours: 3,
-                minutes: 28,
-                progress: 50,
-                title: AppString.studypageappbartitle,
-                lessons: [
-                  'Brainstorming Basics',
-                  'Brainstorming Basics',
-                  'Brainstorming Basics',
-                  'Brainstorming Basics',
-                ],
-              ),
-              SizedBox(height: 10),
-              ExpandableCard(
-                completedLesson: 2,
-                totalLesson: 6,
-                hours: 3,
-                minutes: 28,
-                progress: 50,
-                title: AppString.studypageappbartitle,
-                lessons: [
-                  'Brainstorming Basics',
-                  'Brainstorming Basics',
-                  'Brainstorming Basics',
-                  'Brainstorming Basics',
-                ],
-              ),
-              SizedBox(
-                height: 30,
-              )
             ],
           ),
         ),

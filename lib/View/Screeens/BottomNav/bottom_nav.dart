@@ -64,7 +64,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
         buttonBackgroundColor: AppColors.primary700,
         color: AppColors.white100,
         animationCurve: Curves.easeOut,
-        animationDuration: Duration(milliseconds: 300),
+        animationDuration: Duration(milliseconds: 200),
         height: 60,
         index: _currentIndex,
         items: List.generate(5, (index) {

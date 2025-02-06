@@ -22,6 +22,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<String> iconsList = [
+    AppIcons.men,
+    AppIcons.women,
+    AppIcons.mental_health,
+    AppIcons.pregnancy
+  ];
+
   String? selectedOption;
   @override
   Widget build(BuildContext context) {
@@ -127,95 +134,131 @@ class _HomeScreenState extends State<HomeScreen> {
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    children: [
-                      Container(
-                        height: 70,
-                        width: 70,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: AppColors.circleBackgroundColor),
-                        child: SvgPicture.asset(
-                          AppIcons.men,
-                          fit: BoxFit.fitHeight,
+
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: List.generate(iconsList.length ?? 0, (index) {
+                    return Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 28.w, vertical: 15.h),
+
+                          // height: 70,
+                          // width: 70,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: AppColors.circleBackgroundColor),
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: SvgPicture.asset(
+                              iconsList[index],
+                              fit: BoxFit.fill,
+                            ),
+                          ),
                         ),
-                      ),
-                      CustomText(
-                        text: AppString.mhealth,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.black500,
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Container(
-                        height: 70,
-                        width: 70,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: AppColors.circleBackgroundColor),
-                        child: SvgPicture.asset(
-                          AppIcons.women,
-                          fit: BoxFit.fitHeight,
-                        ),
-                      ),
-                      CustomText(
-                        text: AppString.whealth,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.black500,
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Container(
-                        height: 70,
-                        width: 70,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: AppColors.circleBackgroundColor),
-                        child: SvgPicture.asset(
-                          AppIcons.mental_health,
-                          fit: BoxFit.fitHeight,
-                        ),
-                      ),
-                      CustomText(
-                        text: AppString.mentalhealth,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.black500,
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Container(
-                        height: 70,
-                        width: 70,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: AppColors.circleBackgroundColor),
-                        child: SvgPicture.asset(
-                          AppIcons.pregnancy,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      CustomText(
-                        text: AppString.pregnancy,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.black500,
-                      ),
-                    ],
-                  ),
-                ],
+                        CustomText(
+                          text: AppString.mhealth,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.black500,
+                        )
+                      ],
+                    );
+                  }),
+                ),
               ),
+
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     Column(
+              //       children: [
+              //         Container(
+              //           height: 70,
+              //           width: 70,
+              //           decoration: BoxDecoration(
+              //               borderRadius: BorderRadius.circular(50),
+              //               color: AppColors.circleBackgroundColor),
+              //           child: SvgPicture.asset(
+              //             AppIcons.men,
+              //             fit: BoxFit.fitHeight,
+              //           ),
+              //         ),
+              //         CustomText(
+              //           text: AppString.mhealth,
+              //           fontSize: 12,
+              //           fontWeight: FontWeight.w500,
+              //           color: AppColors.black500,
+              //         )
+              //       ],
+              //     ),
+              //     Column(
+              //       children: [
+              //         Container(
+              //           height: 70,
+              //           width: 70,
+              //           decoration: BoxDecoration(
+              //               borderRadius: BorderRadius.circular(50),
+              //               color: AppColors.circleBackgroundColor),
+              //           child: SvgPicture.asset(
+              //             AppIcons.women,
+              //             fit: BoxFit.fitHeight,
+              //           ),
+              //         ),
+              //         CustomText(
+              //           text: AppString.whealth,
+              //           fontSize: 12,
+              //           fontWeight: FontWeight.w500,
+              //           color: AppColors.black500,
+              //         )
+              //       ],
+              //     ),
+              //     Column(
+              //       children: [
+              //         Container(
+              //           height: 70,
+              //           width: 70,
+              //           decoration: BoxDecoration(
+              //               borderRadius: BorderRadius.circular(50),
+              //               color: AppColors.circleBackgroundColor),
+              //           child: SvgPicture.asset(
+              //             AppIcons.mental_health,
+              //             fit: BoxFit.fitHeight,
+              //           ),
+              //         ),
+              //         CustomText(
+              //           text: AppString.mentalhealth,
+              //           fontSize: 12,
+              //           fontWeight: FontWeight.w500,
+              //           color: AppColors.black500,
+              //         )
+              //       ],
+              //     ),
+              //     Column(
+              //       children: [
+              //         Container(
+              //           height: 70,
+              //           width: 70,
+              //           decoration: BoxDecoration(
+              //               borderRadius: BorderRadius.circular(50),
+              //               color: AppColors.circleBackgroundColor),
+              //           child: SvgPicture.asset(
+              //             AppIcons.pregnancy,
+              //             fit: BoxFit.cover,
+              //           ),
+              //         ),
+              //         CustomText(
+              //           text: AppString.pregnancy,
+              //           fontSize: 12,
+              //           fontWeight: FontWeight.w500,
+              //           color: AppColors.black500,
+              //         ),
+              //       ],
+              //     ),
+              //   ],
+              // ),
             ],
           ),
         ),

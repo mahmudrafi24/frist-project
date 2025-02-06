@@ -49,39 +49,20 @@ class _CourseTwoState extends State<CourseTwo> {
               textAlign: TextAlign.start,
             ),
             SizedBox(height: 20),
-            CustomStudyCard(
-              onTap: () {
-                Get.to(CaseStudyTwo());
-              },
-              title: "NGN Case 1: Adult Health",
-              progress: 35,
-              totalQus: 6,
-              completedQus: 2,
-            ),
-            SizedBox(height: 10),
-            CustomStudyCard(
-              onTap: () {},
-              title: "NGN Case 1: Adult Health",
-              progress: 35,
-              totalQus: 6,
-              completedQus: 2,
-            ),
-            SizedBox(height: 10),
-            CustomStudyCard(
-              onTap: () {},
-              title: "NGN Case 1: Adult Health",
-              progress: 35,
-              totalQus: 6,
-              completedQus: 2,
-            ),
-            SizedBox(height: 10),
-            CustomStudyCard(
-              onTap: () {},
-              title: "NGN Case 1: Adult Health",
-              progress: 35,
-              totalQus: 6,
-              completedQus: 2,
-            ),
+            ...List.generate(5, (index) {
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 20),
+                child: CustomStudyCard(
+                  onTap: () {
+                    Get.to(CaseStudyTwo());
+                  },
+                  title: "NGN Case 1: Adult Health",
+                  progress: 35,
+                  totalQus: 6,
+                  completedQus: 2,
+                ),
+              );
+            }),
             SizedBox(height: 10),
           ],
         ),
