@@ -47,7 +47,8 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
 
       /// App Bar for all the pages
       appBar: AppBar(
-        leading: IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
+        leading:
+            IconButton(onPressed: () {}, icon: SvgPicture.asset(AppIcons.menu)),
         title: SvgPicture.asset(AppIcons.mainIcon),
         centerTitle: true,
         actions: [
@@ -56,6 +57,8 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
             onPressed: () {},
           )
         ],
+        elevation: 1,
+        backgroundColor: AppColors.white100,
       ),
 
       /// Curved Bottom Navigation Bar

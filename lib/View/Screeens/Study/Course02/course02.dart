@@ -60,6 +60,7 @@ class _CourseTwoState extends State<CourseTwo> {
                   progress: 35,
                   totalQus: 6,
                   completedQus: 2,
+                  alignment: Alignment.bottomRight,
                 ),
               );
             }),

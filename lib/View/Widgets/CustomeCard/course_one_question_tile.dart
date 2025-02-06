@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frist_project/View/Widgets/Custom_Text/custom_text.dart';
 import '../../../Utils/AppColors/app_colors.dart';
-class QuestionTile extends StatelessWidget {
+
+class QuestionTile extends StatefulWidget {
   final int questionNumber;
   final String questionText;
   final List<String> options;
@@ -17,38 +18,50 @@ class QuestionTile extends StatelessWidget {
   });
 
   @override
+  State createState() => _QuestionTileState();
+}
+
+class _QuestionTileState extends State<QuestionTile> {
+  int? selectedIndex; // Stores selected option index
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomText(
-          text: "$questionNumber. $questionText",
+          text: "${widget.questionNumber}. ${widget.questionText}",
           fontSize: 16,
           fontWeight: FontWeight.w500,
           color: AppColors.black600,
+          maxLines: 4,
+          textAlign: TextAlign.start,
         ),
         SizedBox(height: 8.h),
         Column(
-          children: List.generate(options.length, (index) {
-            return GestureDetector(
-              onTap: () {
-                onSelected!(options[index], index); // Pass both value & index
-              },
-              child: Container(
-                padding: EdgeInsets.all(12.h),
-                margin: EdgeInsets.symmetric(vertical: 6.h),
-                decoration: BoxDecoration(
-                  color: AppColors.white100,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: AppColors.primary700),
-                ),
-                child: CustomText(
-                  text: options[index],
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.black600,
-                ),
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: List.generate(widget.options.length, (index) {
+            return RadioListTile<int>(
+              title: CustomText(
+                text: widget.options[index],
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: AppColors.black600,
+                textAlign: TextAlign.start,
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
               ),
+              value: index,
+              groupValue: selectedIndex,
+              activeColor: AppColors.primary700,
+              onChanged: (int? value) {
+                setState(() {
+                  selectedIndex = value;
+                });
+                if (widget.onSelected != null) {
+                  widget.onSelected!(widget.options[index], index);
+                }
+              },
             );
           }),
         ),

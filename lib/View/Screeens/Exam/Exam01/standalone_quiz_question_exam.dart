@@ -1,24 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:frist_project/Utils/StaticString/static_string.dart';
-import 'package:frist_project/View/Widgets/Custom_Button/custom_button.dart';
-import 'package:frist_project/View/Widgets/Custom_Expanded_Card/custom_expanded_container.dart';
-import 'package:frist_project/View/Widgets/Custom_Text/custom_text.dart';
-import 'package:frist_project/View/Widgets/CustomeCard/custom_container_explanation.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
 import '../../../../Utils/AppColors/app_colors.dart';
 import '../../../../Utils/AppIcons/app_icons.dart';
+import '../../../../Utils/StaticString/static_string.dart';
+import '../../../Widgets/Custom_Button/custom_button.dart';
+import '../../../Widgets/Custom_Expanded_Card/custom_expanded_container.dart';
+import '../../../Widgets/Custom_Text/custom_text.dart';
 import '../../../Widgets/CustomeCard/course_one_question_tile.dart';
+import '../../../Widgets/CustomeCard/custom_container_explanation.dart';
 
-class CaseStudyQuiz extends StatefulWidget {
-  const CaseStudyQuiz({super.key});
+class StandaloneQuizQuestionExam extends StatefulWidget {
+  const StandaloneQuizQuestionExam({super.key});
 
   @override
-  State<CaseStudyQuiz> createState() => _CaseStudyQuizState();
+  State<StandaloneQuizQuestionExam> createState() =>
+      _StandaloneQuizQuestionExamState();
 }
 
-class _CaseStudyQuizState extends State<CaseStudyQuiz> {
+class _StandaloneQuizQuestionExamState
+    extends State<StandaloneQuizQuestionExam> {
   List<String> expandablelistTitle = [
     AppString.c02ddbar01,
     AppString.c02ddbar02,
@@ -61,7 +65,7 @@ class _CaseStudyQuizState extends State<CaseStudyQuiz> {
           icon: SvgPicture.asset(AppIcons.studybackbutton),
         ),
         title: Text(
-          "Back",
+          AppString.standalone,
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w500,
@@ -69,6 +73,7 @@ class _CaseStudyQuizState extends State<CaseStudyQuiz> {
           ),
         ),
         titleSpacing: -7,
+        backgroundColor: AppColors.white100,
       ),
       backgroundColor: AppColors.white100,
       body: SingleChildScrollView(

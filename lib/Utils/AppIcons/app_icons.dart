@@ -9,7 +9,7 @@ class AppIcons {
   static const String mainIcon = "$basePathIcons/mainIcon.svg";
   static const String material = "$basePathIcons/material.svg";
   static const String mental_health = "$basePathIcons/mental_health.svg";
-  static const String menu = "$basePathIcons/menu.svg";
+  static const String menu = "assets/icons/menu.svg";
   static const String notification = "$basePathIcons/notification.svg";
   static const String pregnancy = "$basePathIcons/pregnancy.svg";
   static const String profile = "$basePathIcons/profile.svg";

@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frist_project/Utils/AppIcons/app_icons.dart';
 import 'package:frist_project/Utils/StaticString/static_string.dart';
 import 'package:frist_project/View/Screeens/BottomNav/bottom_nav.dart';
-import 'package:frist_project/View/Screeens/Home/home_screen.dart';
 import 'package:frist_project/View/Screeens/LoginSignUP/forgot_password_page.dart';
 import 'package:frist_project/View/Screeens/LoginSignUP/sigin_up_page.dart';
 import 'package:frist_project/View/Widgets/Custom_Button/custom_button.dart';

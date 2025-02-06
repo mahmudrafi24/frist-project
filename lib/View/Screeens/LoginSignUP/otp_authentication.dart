@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frist_project/View/Screeens/LoginSignUP/reset_password.dart';
-import 'package:frist_project/View/Widgets/Custom_Text_field/custom_otp_text_field.dart';
 import 'package:get/get.dart';
-import 'package:otp_text_field/otp_field.dart';
 
 import '../../../Utils/AppColors/app_colors.dart';
 import '../../../Utils/StaticString/static_string.dart';

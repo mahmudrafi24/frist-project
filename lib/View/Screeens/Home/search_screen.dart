@@ -30,11 +30,6 @@ class _SearchScreenState extends State<SearchScreen> {
     }
   }
 
-  void _clearSearch() {
-    setState(() {
-      recentSearch.clear();
-    });
-  }
 
   void _removeSearchItem(int index) {
     setState(() {

@@ -128,4 +128,53 @@ class AppString {
 
   static const String c02ddDescription =
       "Emergency Department\n 0615:\nA 61-year-old client comes to the emergency department reporting shortness of breath.She states that she had to stop and sit down while getting ready for work this morning because she suddenly felt like she could not catch her breath. She denies any cough, fever, palpitations, or lightheadedness.She denies any recent sick contacts but notes that she recently injured her leg in a minor bicycle accident.";
+
+  ///<====================== These are for the Exam Screen ======================>
+  static const String practiceTest = "Practice Test";
+  static const String standalone = "Standalone Question";
+  static const String standaloneDes =
+      "It typically consists of a series of questions or tasks, such as multiple-choice, short answers, essays, or practical demonstrations, and is used to measure understanding and proficiency.";
+  static const String readiness = "Readiness Exam";
+  static const String readinessDes =
+      "Formal assessment designed to evaluate  person's knowledge, skills, or abilities in a specific subject or field";
+  static const String readinessTitle =
+      "Formal assessment designed to evaluate  person's knowledge, skills, or abilities in a specific subject or field";
+  static const String pleaseRead =
+      "Please read the following before starting :";
+  static const String questions1 =
+      "You will have 3 hours 20 minutes to answer 100 questions, similar to the real NCLEX.";
+  static const String questions2 =
+      "You cannot pause the exam and must answer all questions at once, set aside at least 3 hours 20 minutes to complete the Readiness Exam.";
+  static const String questions3 =
+      "Your score report will appear after finishing the exam.";
+  static const String startExam = "Start Readiness Exam";
+  static const String goBack = "Go Back";
+
+  static const String top5Finding =
+      "Select the top 5 findings that would require immediate follow-up.";
+  static const String top01topic = "Burning sensation when voiding";
+  static const String top02topic = "Headache";
+  static const String top03topic = "Blood Pressure";
+  static const String top04topic = "Lochia Assessment";
+  static const String top05topic = "Fundal Assessment";
+  static const String top06topic = "Low extremity finding";
+  static const String top07topic = "Pulse";
+  static const String standoloneDescription =
+      "The standalone questions below are based on the real Next Gen NCLEX. Practice with these so you're ready for the real exam.";
+
+  static const String readinessExam =
+      "Welcome to NCLEX Bootcamp Readiness Readiness Exam 01";
+
+  ///<====================== These are for the Material Screen ======================>
+  static const String joinstudygroup = "Join our Study Group";
+  static const String joinstudygropDes =
+      "Get connected with thousands of students around the world. Support each other through sharing knowledge";
+  static const String joinnow = "Join Now";
+  static const String studySchedule = "Study Schedule";
+  static const String seeStudySchedule = "See Study Schedule";
+  static const String createMyschedule = "Create Study Schedule";
+  static const String studyGuide = "Study Guide";
+
+  static const String mathematics = "Mathematic classes";
+  static const String mathcDes = "Lorem Ipsum is a dummy text";
 }

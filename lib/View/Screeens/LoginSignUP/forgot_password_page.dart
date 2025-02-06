@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frist_project/Utils/AppColors/app_colors.dart';
-import 'package:frist_project/Utils/AppIcons/app_icons.dart';
 import 'package:frist_project/Utils/StaticString/static_string.dart';
 import 'package:frist_project/View/Screeens/LoginSignUP/otp_authentication.dart';
 import 'package:frist_project/View/Widgets/Custom_Text/custom_text.dart';

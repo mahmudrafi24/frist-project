@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frist_project/View/Screeens/Study/Cousre01/quiz_question.dart';
 import 'package:frist_project/View/Widgets/Custom_Button/custom_button.dart';
-import 'package:frist_project/View/Widgets/Custom_Text/custom_text.dart';
+import 'package:frist_project/View/Widgets/CustomeCard/custom_container_explanation.dart';
 import 'package:video_player/video_player.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -82,37 +82,37 @@ class _CourseOneVideoSectionState extends State<CourseOneVideoSection> {
               ),
               SizedBox(height: 15),
               /*
-              // SizedBox(
-              //   height: 225,
-              //   width: double.infinity,
-              //   child: _videoPlayerController.value.isInitialized
-              ///       ? Stack(
-              //           alignment: Alignment.center,
-              //           children: [
-              //             AspectRatio(
-              //               aspectRatio: _videoPlayerController.value.aspectRatio,
-              //               child: VideoPlayer(_videoPlayerController),
-              //             ),
-              //             IconButton(
-              //               icon: Icon(
-              //                 _isPlaying ? Icons.pause_circle : Icons.play_circle,
-              //                 size: 50,
-              //                 color: Colors.white,
-              //               ),
-              //               onPressed: _togglePlayPause,
-              //             ),
-              //             Positioned(
-              //               top: 10,
-              //               right: 10,
-              //               child: IconButton(
-              //                 icon: Icon(Icons.fullscreen, color: Colors.white),
-              //                 onPressed: () {},
-              //               ),
-              //             ),
-              //           ],
-              //         )
-              //       : Center(child: CircularProgressIndicator()),
-              // ),
+              SizedBox(
+                height: 225,
+                width: double.infinity,
+                child: _videoPlayerController.value.isInitialized
+                    ? Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          AspectRatio(
+                            aspectRatio: _videoPlayerController.value.aspectRatio,
+                            child: VideoPlayer(_videoPlayerController),
+                          ),
+                          IconButton(
+                            icon: Icon(
+                              _isPlaying ? Icons.pause_circle : Icons.play_circle,
+                              size: 50,
+                              color: Colors.white,
+                            ),
+                            onPressed: _togglePlayPause,
+                          ),
+                          Positioned(
+                            top: 10,
+                            right: 10,
+                            child: IconButton(
+                              icon: Icon(Icons.fullscreen, color: Colors.white),
+                              onPressed: () {},
+                            ),
+                          ),
+                        ],
+                      )
+                    : Center(child: CircularProgressIndicator()),
+              ),
               */
               Container(
                 height: 225.h,
@@ -125,114 +125,29 @@ class _CourseOneVideoSectionState extends State<CourseOneVideoSection> {
               SizedBox(
                 height: 25.h,
               ),
-              Container(
-                padding: const EdgeInsets.only(
-                  left: 15,
-                  right: 15,
-                  top: 15,
-                ),
-                decoration: BoxDecoration(
-                  color: AppColors.darkBlue50,
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CustomText(
-                      text: "Notes",
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.black500,
-                    ),
-                    SizedBox(
-                      height: 10.h,
-                    ),
-                    CustomText(
-                      text: AppString.courseoneNotePara01,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.black500,
-                      maxLines: 10,
-                      textAlign: TextAlign.justify,
-                    ),
-                    SizedBox(
-                      height: 10.h,
-                    ),
-                    CustomText(
-                      text: AppString.courseoneNotePara01,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.black500,
-                      maxLines: 10,
-                      textAlign: TextAlign.justify,
-                    ),
-                    SizedBox(
-                      height: 10.h,
-                    ),
-                    CustomText(
-                      text: AppString.courseoneNotePara02,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.black500,
-                      maxLines: 10,
-                      textAlign: TextAlign.justify,
-                    ),
-                    SizedBox(
-                      height: 10.h,
-                    ),
-                    CustomText(
-                      text: AppString.courseoneNotePara03,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.black500,
-                      maxLines: 10,
-                      textAlign: TextAlign.justify,
-                    ),
-                    SizedBox(
-                      height: 10.h,
-                    ),
-                    CustomText(
-                      text: AppString.courseoneNotePara04,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.black500,
-                      maxLines: 10,
-                      textAlign: TextAlign.justify,
-                    ),
-                    SizedBox(
-                      height: 10.h,
-                    ),
-                    CustomText(
-                      text: AppString.courseoneNotePara05,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.black500,
-                      maxLines: 10,
-                      textAlign: TextAlign.justify,
-                    ),
-                    SizedBox(
-                      height: 10.h,
-                    ),
-                    CustomText(
-                      text: "Key Takeaway: ",
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.black500,
-                    ),
-                  ],
-                ),
+              CustomContainerExplanation(
+                title: "Notes",
+                paragraphs: [
+                  AppString.courseoneNotePara01,
+                  AppString.courseoneNotePara02,
+                  AppString.courseoneNotePara03,
+                  AppString.courseoneNotePara04,
+                  AppString.courseoneNotePara05,
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.only(
-                    top: 40, bottom: 80, left: 20, right: 20),
-                child: CustomButton(
-                  onTap: () {
-                    Get.to(() => QuestionAfterVideo());
-                  },
-                  fillColor: AppColors.primary700,
-                  textColor: AppColors.white200,
-                  title: AppString.next,
-                ),
+              SizedBox(
+                height: 20,
+              ),
+              CustomButton(
+                onTap: () {
+                  Get.to(() => QuestionAfterVideo());
+                },
+                fillColor: AppColors.primary700,
+                textColor: AppColors.white200,
+                title: AppString.next,
+              ),
+              SizedBox(
+                height: 20,
               ),
             ],
           ),
