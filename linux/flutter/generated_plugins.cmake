@@ -4,6 +4,7 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   expansion_stepper
+  file_selector_linux
   itq_utils
   url_launcher_linux
 )

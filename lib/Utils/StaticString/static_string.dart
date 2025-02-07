@@ -177,4 +177,91 @@ class AppString {
 
   static const String mathematics = "Mathematic classes";
   static const String mathcDes = "Lorem Ipsum is a dummy text";
+
+  ///<====================== These are for the Profile Screen ======================>
+  static const String profileName = "Denisa Ozel";
+  static const String accountDetails = "Account Details";
+  static const String userName = "Username";
+  static const String useremail = "Email";
+  static const String contactnumber = "Contact Number";
+  static const String settings = "Settings";
+
+  static const String uname = ":    its_cheryl_btw";
+  static const String uemail = ":    cherylboss@gmail.com";
+  static const String contactnum = ":    +9999999999999";
+
+  static const String editProfile = "Edit Profile";
+  static const String changePassword = "Change Password";
+  static const String termsnCondtion = "Terms & Conditions";
+  static const String privacypolicy = "Privac Policy";
+  static const String contactUs = "Contact Us";
+  static const String deleteaccount = "Delete Account";
+
+  static const String nameU = "User Name";
+  static const String nameE = "Address";
+  static const String pnumber = "Phone Number";
+  static const String save = "Save & Change";
+
+  static const String tnc01 =
+      "1. Acceptance of Terms\nBy accessing or using the LOGO platform (the App), you agree to be bound by these Terms and Conditions (Terms). If you do not agree with these Terms, you must refrain from using the App.";
+  static const String tnc02 =
+      "2. Services Provided\nLOOC facilitates the connection between businesses (Employers) and professionals (Service Providers). The App enables Employers to book Service Providers for temporary or part-time work.";
+  static const String tnc03 =
+      "3. User Responsibilities\nService Providers: You represent and warrant that all information provided, including but not limited to qualifications, certifications, and work experience, is truthful and accurate. Any misrepresentation may result in account suspension or termination. Employers: You are responsible for verifying the qualifications, experience, and suitability of Service Providers for the tasks assigned.";
+  static const String tnc04 =
+      "4. No Employment Relationship\nLOGO acts solely as an intermediary to facilitate the engagement between Employers and Service Providers. No employer-employee relationship is ";
+
+  static const String writeDownProblem =
+      "Write down the problem you are facing";
+  static const String sendReport = "Send Report";
+
+  static const String changepasswordS =
+      "Your password must be at least 6 characters and should include a combination of numbers, letters and special characters (!@%)";
+
+  static const String cpass = "Current Password";
+  static const String npass = "New Password";
+  static const String cnpass = "Confirm New Password";
+
+  static const String deleteaccDes =
+      "If you wish to delete your account, we've made the  process simple and secure. By choosing to delete your account, all your personal data and associated information will be permanently erased from our system.";
+
+  static const String drawname = "Welcome Back!";
+  static const String namePlaceHolder = "Fahim Boss";
+  static const String giveReviews = "Give Reviews";
+  static const String studenReviews = "Student Reviews";
+  static const String support = "Support";
+  static const String community = "Community";
+  static const String saved = "Saved";
+  static const String upgrade = "Upgrade";
+  static const String upgradedes = "Upgrade to Pro for more feature";
+  static const String feelfreetogive = "Upgrade to Pro for more feature ";
+  static const String submitReviews = "Submit Reviews";
+  static const String reviewDetails =
+      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.";
+  static const String rating = "Ratings";
+  static const String designation = "Legacy Solutions Engineer";
+
+  static const String reviewDetails01 =
+      "tincidunt Cras Sed Vestibulum urna. porta Ut Sed elementum faucibus vitae vehicula, commodo Nullam ex id lobortis, luctus Nam sollicitudin. commodo scelerisque Sed gravida malesuada malesuada Cras volutpat Donec elit. sit consectetur leo";
+  static const String reviewsDetails02 =
+      "id libero, nibh id nec nisi faucibus non Ut turpis Ut dolor nec Morbi lacus, quis sit non, est. vitae tincidunt dui. Nullam ac facilisis amet, non, orci enim. placerat tortor. elementum cursus nisl. felis, sapien convallis. efficitur. sit ";
+
+  static const String communityTitle =
+      "Our community is here to support you every step of the way on your nursing journey. Connect with fellow learners to share experiences, ask questions, and exchange valuable insights.";
+
+  static const String communityQues01 =
+      "Our community is here to support you every step of the way on your nursing journey. Connect with fellow learners to share experiences, ask questions, and exchange valuable insights.";
+  static const String communitymem01 = "Alisha Humphrey";
+  static const String student = "Student";
+  static const String communityQues02 =
+      "How to maintain NCLEX exam preparation along with full time job? I am also a single mother with 2 kids? Seeing this huge syllabus is impossible to me. ";
+  static const String communitymem02 = "Rachel Smith";
+  static const String mentor = "Mentor";
+
+  static const String askQuestion = "Ask a Question";
+  static const String writeYourAnswer = "Write your answer";
+
+  static const String savedTitle = "Case Study - Adult Life";
+  static const String savedDescription =
+      "Offer full-length practice exams that mimic the actual NCLEX, complete with time constraints and a user interface similar to the";
 }

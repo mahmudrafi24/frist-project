@@ -8,4 +8,6 @@ class AppImages {
 
   ///====================== Login Image ================================
   static const String loginImage = "$basePath/login001.png";
+
+  static const String profileImage = "assets/images/profile01.png";
 }

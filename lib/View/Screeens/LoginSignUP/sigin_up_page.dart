@@ -4,7 +4,7 @@ import 'package:frist_project/Utils/StaticString/static_string.dart';
 import 'package:frist_project/View/Screeens/LoginSignUP/login_page.dart';
 import 'package:frist_project/View/Widgets/Custom_Button/custom_button.dart';
 import 'package:frist_project/View/Widgets/Custom_Text/custom_text.dart';
-import 'package:frist_project/View/Widgets/Custom_Text_field/custome_text_field.dart';
+import 'package:frist_project/View/Widgets/CustomTextField/custome_text_field.dart';
 import 'package:frist_project/utils/AppColors/app_colors.dart';
 import 'package:get/get.dart';
 

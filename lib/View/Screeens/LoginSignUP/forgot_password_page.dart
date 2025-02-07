@@ -7,7 +7,7 @@ import 'package:frist_project/View/Widgets/Custom_Text/custom_text.dart';
 import 'package:get/get.dart';
 
 import '../../Widgets/Custom_Button/custom_button.dart';
-import '../../Widgets/Custom_Text_field/custome_text_field.dart';
+import '../../Widgets/CustomTextField/custome_text_field.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({super.key});

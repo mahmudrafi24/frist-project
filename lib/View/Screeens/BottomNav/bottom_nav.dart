@@ -75,21 +75,29 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
           return Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset(
-                [
-                  AppIcons.home,
-                  AppIcons.study,
-                  AppIcons.exam,
-                  AppIcons.material,
-                  AppIcons.profile
-                ][index],
-                height: 24,
-                width: 24,
-                colorFilter: ColorFilter.mode(
-                  isActive ? AppColors.white100 : AppColors.black800,
-                  BlendMode.srcIn,
-                ),
-              ),
+              isActive
+                  ? SvgPicture.asset(
+                      [
+                        AppIcons.homeWhite,
+                        AppIcons.studyWhite,
+                        AppIcons.examWhite,
+                        AppIcons.materialWhite,
+                        AppIcons.profileWhite
+                      ][index],
+                      height: 24,
+                      width: 24,
+                    )
+                  : SvgPicture.asset(
+                      [
+                        AppIcons.home,
+                        AppIcons.study,
+                        AppIcons.exam,
+                        AppIcons.material,
+                        AppIcons.profile
+                      ][index],
+                      height: 24,
+                      width: 24,
+                    ),
               CustomText(
                 text: ["Home", "Study", "Exam", "Material", "Profile"][index],
                 fontSize: 12,

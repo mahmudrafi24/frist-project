@@ -7,7 +7,7 @@ import '../../../Utils/AppColors/app_colors.dart';
 import '../../../Utils/StaticString/static_string.dart';
 import '../../Widgets/Custom_Button/custom_button.dart';
 import '../../Widgets/Custom_Text/custom_text.dart';
-import '../../Widgets/Custom_Text_field/custome_text_field.dart';
+import '../../Widgets/CustomTextField/custome_text_field.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({super.key});

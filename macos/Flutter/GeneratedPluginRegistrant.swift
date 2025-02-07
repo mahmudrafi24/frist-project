@@ -8,6 +8,7 @@ import Foundation
 import connectivity_plus
 import device_info_plus
 import expansion_stepper
+import file_selector_macos
 import itq_utils
 import package_info_plus
 import path_provider_foundation
@@ -20,6 +21,7 @@ func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
   ConnectivityPlusPlugin.register(with: registry.registrar(forPlugin: "ConnectivityPlusPlugin"))
   DeviceInfoPlusMacosPlugin.register(with: registry.registrar(forPlugin: "DeviceInfoPlusMacosPlugin"))
   ExpansionStepperPlugin.register(with: registry.registrar(forPlugin: "ExpansionStepperPlugin"))
+  FileSelectorPlugin.register(with: registry.registrar(forPlugin: "FileSelectorPlugin"))
   ITQUtilsPlugin.register(with: registry.registrar(forPlugin: "ITQUtilsPlugin"))
   FPPPackageInfoPlusPlugin.register(with: registry.registrar(forPlugin: "FPPPackageInfoPlusPlugin"))
   PathProviderPlugin.register(with: registry.registrar(forPlugin: "PathProviderPlugin"))

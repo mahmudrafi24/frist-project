@@ -6,7 +6,7 @@ import 'package:frist_project/Utils/AppIcons/app_icons.dart';
 import 'package:frist_project/View/Screeens/Home/search_screen.dart';
 import 'package:frist_project/View/Widgets/Custom_Button/custom_button.dart';
 import 'package:frist_project/View/Widgets/Custom_Text/custom_text.dart';
-import 'package:frist_project/View/Widgets/Custom_Text_field/custome_text_field.dart';
+import 'package:frist_project/View/Widgets/CustomTextField/custome_text_field.dart';
 import '../../../Utils/AppColors/app_colors.dart';
 import '../../../Utils/StaticString/static_string.dart';
 

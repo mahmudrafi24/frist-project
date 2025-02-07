@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:frist_project/Utils/StaticString/static_string.dart';
 import 'package:frist_project/View/Widgets/Custom_Text/custom_text.dart';
-import 'package:frist_project/View/Widgets/Custom_Text_field/custome_text_field.dart';
+import 'package:frist_project/View/Widgets/CustomTextField/custome_text_field.dart';
 
 import '../../../Utils/AppColors/app_colors.dart';
 import '../../../Utils/AppIcons/app_icons.dart';

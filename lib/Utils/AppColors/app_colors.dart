@@ -13,6 +13,18 @@ class AppColors {
   static const Color blue800 = Color(0xff00528c);
   static const Color blue900 = Color(0xff003f6b);
 
+  ///< ========================== This is for the grey ====================>
+  static const Color grey50 = Color(0xffF9FAFB);
+  static const Color grey100 = Color(0xffF3F4F6);
+  static const Color grey200 = Color(0xffE5E7EA);
+  static const Color grey300 = Color(0xffD2D5DB);
+  static const Color grey400 = Color(0xff9EA2AE);
+  static const Color grey500 = Color(0xff9EA2AE);
+  static const Color grey600 = Color(0xff6D717F);
+  static const Color grey700 = Color(0xff4D5461);
+  static const Color grey800 = Color(0xff394050);
+  static const Color grey900 = Color(0xff212936);
+
   ///< ========================== This is for the dark-blu ====================>
   static const Color darkBlue50 = Color(0xffedeffe);
   static const Color darkBlue100 = Color(0xffc8cefc);
@@ -112,4 +124,7 @@ class AppColors {
 
   static const Color studyCardProgressColor = Color(0xffFDC161);
   static const Color studyCardColor = Color(0xff023F86);
+
+  static const Color caledarColor = Color(0xff3649F9);
+  static const Color calendarDay = Color(0xff3649F9);
 }

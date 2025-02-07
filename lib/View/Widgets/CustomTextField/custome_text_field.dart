@@ -31,7 +31,7 @@ class CustomTextField extends StatefulWidget {
     this.onTapClick = _defaultOnTap,
     this.isPrefixIcon = false,
     this.focusBorderColor = AppColors.white700,
-    this.height = 48,
+    this.height,
     this.maxLength,
     this.labelText,
   });
@@ -64,7 +64,7 @@ class CustomTextField extends StatefulWidget {
   final bool isPrefixIcon;
   final VoidCallback onTapClick;
   final bool readOnly;
-  final double height;
+  final double? height;
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
@@ -91,7 +91,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
           // onFieldSubmitted:(value){
           //   widget.onSubmited!(value);
           // },
-
           onChanged: widget.onChanged,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           readOnly: widget.readOnly,
