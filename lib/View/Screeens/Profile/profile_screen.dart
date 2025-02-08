@@ -36,7 +36,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               child: Column(
                 children: [
-                  SvgPicture.asset(AppIcons.mainIcon),
                   Align(
                     alignment: Alignment.centerRight,
                     child: IconButton(
@@ -44,7 +43,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         Get.to(() => ProfileSettings());
                       },
                       icon: SvgPicture.asset(
-                        AppIcons.home,
+                        AppIcons.profileSettings,
                       ),
                     ),
                   ),

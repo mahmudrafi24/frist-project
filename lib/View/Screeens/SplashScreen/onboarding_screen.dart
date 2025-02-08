@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frist_project/Utils/AppImg/app_images.dart';
 import 'package:frist_project/Utils/StaticString/static_string.dart';
-import 'package:frist_project/View/Screeens/LoginSignUP/login_signup_onboarding.dart';
+import 'package:frist_project/View/Screeens/LoginSignUP/home_login_signup.dart';
 import 'package:frist_project/View/Widgets/Custom_Button/custom_button.dart';
 import 'package:frist_project/View/Widgets/Custom_Text/custom_text.dart';
 import 'package:get/get.dart';

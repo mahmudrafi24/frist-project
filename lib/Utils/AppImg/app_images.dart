@@ -10,4 +10,10 @@ class AppImages {
   static const String loginImage = "$basePath/login001.png";
 
   static const String profileImage = "assets/images/profile01.png";
+
+  static const String drawerImage = "assets/images/drawerBg4x.png";
+
+  static const String drawerProfile = "assets/images/drawerProfile.png";
+
+  static const String studentImage = "assets/images/studentReveiws.png";
 }

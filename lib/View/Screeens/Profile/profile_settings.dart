@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:frist_project/View/Screeens/Profile/profile_change_passoword.dart';
 import 'package:frist_project/View/Widgets/Custom_Text/custom_text.dart';
 import 'package:get/get.dart';
 
 import '../../../Utils/AppColors/app_colors.dart';
 import '../../../Utils/AppIcons/app_icons.dart';
 import '../../../Utils/StaticString/static_string.dart';
+import 'profile_contact_us.dart';
+import 'profile_delete_account.dart';
 import 'profile_edit_profie.dart';
+import 'profile_privacy_and_policy.dart';
+import 'profile_terms_and_condition.dart';
 
 class ProfileSettings extends StatefulWidget {
   const ProfileSettings({super.key});
@@ -85,7 +90,9 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                     ),
                     Spacer(),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => ProfileTermsAndCondition());
+                      },
                       icon: SvgPicture.asset(AppIcons.forwarpage),
                     ),
                   ],
@@ -109,7 +116,9 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                     ),
                     Spacer(),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => ProfilePrivacyAndPolicy());
+                      },
                       icon: SvgPicture.asset(AppIcons.forwarpage),
                     ),
                   ],
@@ -123,7 +132,7 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                 padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: Row(
                   children: [
-                    SvgPicture.asset(AppIcons.profile),
+                    SvgPicture.asset(AppIcons.contactUs),
                     SizedBox(width: 08.w),
                     CustomText(
                       text: AppString.contactUs,
@@ -133,7 +142,9 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                     ),
                     Spacer(),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => ProfileContactUs());
+                      },
                       icon: SvgPicture.asset(AppIcons.forwarpage),
                     ),
                   ],
@@ -157,7 +168,9 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                     ),
                     Spacer(),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => ProfileChangePassoword());
+                      },
                       icon: SvgPicture.asset(AppIcons.forwarpage),
                     ),
                   ],
@@ -181,7 +194,9 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                     ),
                     Spacer(),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => ProfileDeleteAccount());
+                      },
                       icon: SvgPicture.asset(AppIcons.forwarpage),
                     ),
                   ],

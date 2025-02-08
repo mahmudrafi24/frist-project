@@ -51,6 +51,7 @@ class AppIcons {
   static const String faq = "assets/icons/faq.svg";
   static const String forwarpage = "assets/icons/forward_page.svg";
   static const String givereviews = "assets/icons/givereviews.svg";
+  static const String streviews = "assets/icons/streviews.svg";
   static const String privacy = "assets/icons/privacyPolicy.svg";
   static const String savedpage = "assets/icons/saved.svg";
   static const String saved = "assets/icons/savedD.svg";
@@ -60,10 +61,14 @@ class AppIcons {
   static const String stargrey = "assets/icons/stargrey.svg";
   static const String starprimary = "assets/icons/starPrimary.svg";
   static const String stardarkblue = "assets/icons/stardarkblue.svg";
+  static const String contactUs = "assets/icons/contacus.svg";
+  static const String profileSettings = "assets/icons/profileSettings.svg";
 
   static const String homeWhite = "assets/icons/homeWhite.svg";
   static const String examWhite = "assets/icons/examWhite.svg";
   static const String studyWhite = "assets/icons/studyWhite.svg";
   static const String materialWhite = "assets/icons/materialWhite.svg";
   static const String profileWhite = "assets/icons/profileWhite.svg";
+
+  static const String send = "assets/icons/send.svg";
 }

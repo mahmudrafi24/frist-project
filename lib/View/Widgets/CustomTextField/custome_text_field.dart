@@ -10,14 +10,14 @@ class CustomTextField extends StatefulWidget {
     this.focusNode,
     this.keyboardType = TextInputType.text,
     this.textInputAction = TextInputAction.next,
-    this.cursorColor = AppColors.blue700,
+    this.cursorColor = AppColors.black300,
     this.inputTextStyle,
     this.textAlignVertical = TextAlignVertical.center,
     this.textAlign = TextAlign.start,
     this.maxLines = 1,
     this.validator,
     this.hintText,
-    this.hintStyle = const TextStyle(color: AppColors.blue700),
+    this.hintStyle = const TextStyle(color: AppColors.black300),
     this.fillColor = Colors.transparent,
     this.suffixIcon,
     this.onChanged,
@@ -25,15 +25,16 @@ class CustomTextField extends StatefulWidget {
     this.suffixIconColor,
     this.borderRadius = 8,
     this.fieldBorderColor = AppColors.white700,
+    this.focusBorderColor = AppColors.white700,
+    this.borderSideColor, // ✅ Added optional border color
     this.isPassword = false,
     this.readOnly = false,
     super.key,
     this.onTapClick = _defaultOnTap,
     this.isPrefixIcon = false,
-    this.focusBorderColor = AppColors.white700,
-    this.height,
+    this.height = 48,
     this.maxLength,
-    this.labelText,
+    this.labelText = '',
   });
 
   final TextEditingController? textEditingController;
@@ -49,7 +50,7 @@ class CustomTextField extends StatefulWidget {
 
   final FormFieldValidator? validator;
   final String? hintText;
-  final String? labelText;
+  final String labelText;
   final TextStyle? hintStyle;
   final Color? fillColor;
   final Color? suffixIconColor;
@@ -57,14 +58,14 @@ class CustomTextField extends StatefulWidget {
   final double borderRadius;
   final Color fieldBorderColor;
   final Color focusBorderColor;
+  final Color? borderSideColor; // ✅ Optional custom border color
   final void Function(String)? onChanged;
-  // final  void Function(String)? onSubmited;
   final Function(String)? onSubmit;
   final bool isPassword;
   final bool isPrefixIcon;
   final VoidCallback onTapClick;
   final bool readOnly;
-  final double? height;
+  final double height;
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
@@ -80,17 +81,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
       child: Container(
         padding: EdgeInsets.all(0.r),
         child: TextFormField(
-          onTap: () {
-            widget.onTapClick();
-          },
-          onFieldSubmitted: (value) {
-            if (widget.onSubmit != null) {
-              widget.onSubmit!(value);
-            }
-          },
-          // onFieldSubmitted:(value){
-          //   widget.onSubmited!(value);
-          // },
+          onTap: widget.onTapClick,
+          onFieldSubmitted: widget.onSubmit,
           onChanged: widget.onChanged,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           readOnly: widget.readOnly,
@@ -105,22 +97,19 @@ class _CustomTextFieldState extends State<CustomTextField> {
           obscureText: widget.isPassword ? obscureText : false,
           validator: widget.validator,
           decoration: InputDecoration(
-            labelText: widget.labelText,
             isDense: true,
             errorMaxLines: 2,
             hintText: widget.hintText,
-            hintStyle: widget
-                .hintStyle, // TextStyle(color: AppColors.blueLightActive),
+            hintStyle: widget.hintStyle,
             fillColor: widget.fillColor,
             filled: true,
-
             prefixIcon: widget.isPrefixIcon
                 ? Padding(
                     padding: const EdgeInsetsDirectional.symmetric(
                         horizontal: 0, vertical: 0),
                     child: Icon(
                       Icons.search,
-                      color: AppColors.blue700,
+                      color: AppColors.black300,
                       size: 24.h,
                     ),
                   )
@@ -134,29 +123,41 @@ class _CustomTextFieldState extends State<CustomTextField> {
                       child: obscureText
                           ? const Icon(
                               Icons.visibility_off_outlined,
-                              color: AppColors.blue700,
+                              color: AppColors.black300,
                             )
                           : const Icon(Icons.visibility_outlined,
-                              color: AppColors.blue700),
-                    ))
+                              color: AppColors.black300),
+                    ),
+                  )
                 : widget.suffixIcon,
             suffixIconColor: widget.suffixIconColor,
-
             border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(widget.borderRadius),
-                borderSide:
-                    BorderSide(color: widget.fieldBorderColor, width: 0),
-                gapPadding: 0),
+              borderRadius: BorderRadius.circular(widget.borderRadius),
+              borderSide: BorderSide(
+                color: widget.borderSideColor ??
+                    widget.fieldBorderColor, // ✅ Uses custom color if provided
+                width: 1.0,
+              ),
+              gapPadding: 0,
+            ),
             focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(widget.borderRadius),
-                borderSide:
-                    BorderSide(color: widget.focusBorderColor, width: 0),
-                gapPadding: 0),
+              borderRadius: BorderRadius.circular(widget.borderRadius),
+              borderSide: BorderSide(
+                color: widget.borderSideColor ??
+                    widget.focusBorderColor, // ✅ Uses custom color if provided
+                width: 1.0,
+              ),
+              gapPadding: 0,
+            ),
             enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(widget.borderRadius),
-                borderSide:
-                    BorderSide(color: widget.fieldBorderColor, width: 0),
-                gapPadding: 0),
+              borderRadius: BorderRadius.circular(widget.borderRadius),
+              borderSide: BorderSide(
+                color: widget.borderSideColor ??
+                    widget.fieldBorderColor, // ✅ Uses custom color if provided
+                width: 1.0,
+              ),
+              gapPadding: 0,
+            ),
           ),
         ),
       ),

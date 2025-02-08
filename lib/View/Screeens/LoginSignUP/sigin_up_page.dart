@@ -22,7 +22,10 @@ class _SiginUpPageState extends State<SiginUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: AppColors.white100,
+      ),
+      backgroundColor: AppColors.white100,
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
@@ -145,7 +148,7 @@ class _SiginUpPageState extends State<SiginUpPage> {
               height: 21.h,
             ),
             CustomSvgButton(
-              svgPath: AppIcons.google,
+              svgPath: AppIcons.apple,
               height: 56,
               onPressed: () {},
               // backgroundColor: AppColors.white100,

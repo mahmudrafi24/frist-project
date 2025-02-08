@@ -227,6 +227,7 @@ class AppString {
 
   static const String drawname = "Welcome Back!";
   static const String namePlaceHolder = "Fahim Boss";
+  static const String faqdraw = "FAQs";
   static const String giveReviews = "Give Reviews";
   static const String studenReviews = "Student Reviews";
   static const String support = "Support";
@@ -264,4 +265,11 @@ class AppString {
   static const String savedTitle = "Case Study - Adult Life";
   static const String savedDescription =
       "Offer full-length practice exams that mimic the actual NCLEX, complete with time constraints and a user interface similar to the";
+
+  static const String address = "Address";
+  static const String addressField = "California, Rankin Street 121";
+  static const String phoneNumber = "012568554526345";
+
+  static const String cummnitytitle =
+      "Our community is here to support you every step of the way on your nursing journey. Connect with fellow learners to share experiences, ask questions, and exchange valuable insights.";
 }

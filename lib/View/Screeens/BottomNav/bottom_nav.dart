@@ -4,9 +4,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:frist_project/View/Screeens/Exam/exam.dart';
 import 'package:frist_project/View/Screeens/Home/home_screen.dart';
 import 'package:frist_project/View/Screeens/Material/material_screen.dart';
+import 'package:frist_project/View/Screeens/Menu/menu_drawer.dart';
 import 'package:frist_project/View/Screeens/Profile/profile_screen.dart';
 import 'package:frist_project/View/Screeens/Study/study_screen.dart';
 import 'package:frist_project/View/Widgets/Custom_Text/custom_text.dart';
+import 'package:get/get.dart';
 
 import '../../../Utils/AppColors/app_colors.dart';
 import '../../../Utils/AppIcons/app_icons.dart';
@@ -21,6 +23,7 @@ class BottomNavScreen extends StatefulWidget {
 class _BottomNavScreenState extends State<BottomNavScreen> {
   int _currentIndex = 0;
   final PageController _pageController = PageController(initialPage: 0);
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   final List<Widget> _pages = [
     HomeScreen(),
@@ -39,6 +42,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       body: PageView(
         controller: _pageController,
         physics: NeverScrollableScrollPhysics(),
@@ -47,8 +51,11 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
 
       /// App Bar for all the pages
       appBar: AppBar(
-        leading:
-            IconButton(onPressed: () {}, icon: SvgPicture.asset(AppIcons.menu)),
+        leading: IconButton(
+            onPressed: () {
+              _scaffoldKey.currentState?.openDrawer();
+            },
+            icon: SvgPicture.asset(AppIcons.menu)),
         title: SvgPicture.asset(AppIcons.mainIcon),
         centerTitle: true,
         actions: [
@@ -60,6 +67,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
         elevation: 1,
         backgroundColor: AppColors.white100,
       ),
+      drawer: MenuDrawer(),
 
       /// Curved Bottom Navigation Bar
       bottomNavigationBar: CurvedNavigationBar(

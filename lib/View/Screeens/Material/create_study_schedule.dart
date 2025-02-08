@@ -252,6 +252,7 @@ class _CreateStudyScheduleState extends State<CreateStudySchedule> {
                                       ),
                                       fillColor: AppColors.grey300,
                                       height: 300.h,
+                                      maxLines: 8,
                                     ),
                                     SizedBox(
                                       height: 12.h,

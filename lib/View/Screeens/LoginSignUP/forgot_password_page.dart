@@ -28,7 +28,10 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           fontWeight: FontWeight.w700,
           color: AppColors.primary700,
         ),
+        titleSpacing: -7,
+        backgroundColor: AppColors.white100,
       ),
+      backgroundColor: AppColors.white100,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
