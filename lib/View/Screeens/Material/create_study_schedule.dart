@@ -4,12 +4,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:frist_project/Utils/StaticString/static_string.dart';
 import 'package:frist_project/View/Widgets/Custom_Button/custom_button.dart';
 import 'package:frist_project/View/Widgets/Custom_Text/custom_text.dart';
-import 'package:get/get.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 import '../../../Utils/AppColors/app_colors.dart';
 import '../../../Utils/AppIcons/app_icons.dart';
-import '../../Widgets/CustomShowDialogBox/custom_show_dialog_box.dart';
 import '../../Widgets/CustomTextField/custome_text_field.dart';
 
 class CreateStudySchedule extends StatefulWidget {

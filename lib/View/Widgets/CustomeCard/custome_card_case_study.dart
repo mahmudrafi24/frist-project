@@ -41,7 +41,7 @@ class CustomStudyCard extends StatelessWidget {
             SizedBox(height: 10),
             PPProgressBar(
               value: progress / 100.0,
-              height: 8,
+              height: 8.h,
               progressRadius: 1.0,
               progressColor: AppColors.studyCardProgressColor,
               trackColor: AppColors.contineuborderColor,

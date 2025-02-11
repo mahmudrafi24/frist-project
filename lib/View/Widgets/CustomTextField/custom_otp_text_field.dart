@@ -4,6 +4,8 @@ import 'package:pinput/pinput.dart';
 import '../../../Utils/AppColors/app_colors.dart';
 
 class CustomPinput extends StatelessWidget {
+  const CustomPinput({super.key});
+
   @override
   Widget build(BuildContext context) {
     final defaultPinTheme = PinTheme(

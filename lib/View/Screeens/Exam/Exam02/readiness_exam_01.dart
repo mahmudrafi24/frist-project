@@ -6,7 +6,6 @@ import 'package:frist_project/View/Screeens/Exam/Exam02/readiness_exam_02.dart';
 import 'package:frist_project/View/Widgets/Custom_Button/custom_button.dart';
 import 'package:frist_project/View/Widgets/Custom_Text/custom_text.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../Utils/AppColors/app_colors.dart';
 import '../../../../Utils/AppIcons/app_icons.dart';

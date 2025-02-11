@@ -3,8 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frist_project/Core/AppRoute/app_route.dart';
 import 'package:frist_project/View/Widgets/DeviceUtils/device_utils.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:get/get_navigation/src/routes/transitions_type.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

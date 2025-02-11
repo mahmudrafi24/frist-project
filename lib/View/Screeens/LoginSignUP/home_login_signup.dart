@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:frist_project/Utils/AppColors/app_colors.dart';
 import 'package:frist_project/Utils/AppImg/app_images.dart';
-import 'package:frist_project/View/Screeens/LoginSignUP/login_page.dart';
+import 'package:frist_project/View/Screeens/LoginSignUP/Login/login_page.dart';
+import 'package:frist_project/View/Screeens/LoginSignUP/sign_up/sigin_up_page.dart';
 import 'package:frist_project/View/Widgets/Custom_Button/custom_button.dart';
 import 'package:frist_project/View/Widgets/Custom_Text/custom_text.dart';
 import 'package:get/get.dart';
@@ -69,7 +70,9 @@ class _HomePageState extends State<HomePage> {
                       height: 12.h,
                     ),
                     CustomButton(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(() => SiginUpPage());
+                        },
                         height: 45.h,
                         width: 370.w,
                         fillColor: AppColors.white100,

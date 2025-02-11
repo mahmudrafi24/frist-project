@@ -1,28 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:frist_project/Utils/AppIcons/app_icons.dart';
 import 'package:frist_project/Utils/StaticString/static_string.dart';
-import 'package:frist_project/View/Screeens/BottomNav/bottom_nav.dart';
 import 'package:frist_project/View/Screeens/LoginSignUP/forgot_password_page.dart';
-import 'package:frist_project/View/Screeens/LoginSignUP/sigin_up_page.dart';
 import 'package:frist_project/View/Widgets/Custom_Button/custom_button.dart';
 import 'package:frist_project/View/Widgets/Custom_Button/custom_button_with_svg.dart';
 import 'package:frist_project/View/Widgets/Custom_Text/custom_text.dart';
 import 'package:frist_project/View/Widgets/CustomTextField/custome_text_field.dart';
-import 'package:get/get.dart';
-
-import '../../../Utils/AppColors/app_colors.dart';
+import '../../../../Utils/AppColors/app_colors.dart';
+import '../sign_up/sigin_up_page.dart';
+import 'controller/login_controller.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
-
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-  bool isChecked = false;
+  final LoginController controller = Get.put(LoginController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20).r,
+          padding: const EdgeInsets.symmetric(horizontal: 20).r,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -42,9 +39,7 @@ class _LoginPageState extends State<LoginPage> {
                 fontSize: 26,
                 fontWeight: FontWeight.w600,
               ),
-              SizedBox(
-                height: 12,
-              ),
+              SizedBox(height: 12.h),
               CustomText(
                 text: AppString.putInformationtoSignin,
                 color: AppColors.black800,
@@ -53,10 +48,9 @@ class _LoginPageState extends State<LoginPage> {
                 maxLines: 2,
                 textAlign: TextAlign.start,
               ),
-              SizedBox(
-                height: 30.h,
-              ),
+              SizedBox(height: 30.h),
               CustomTextField(
+                textEditingController: controller.emailController,
                 labelText: AppString.email,
                 keyboardType: TextInputType.emailAddress,
                 borderRadius: 4,
@@ -64,53 +58,50 @@ class _LoginPageState extends State<LoginPage> {
                 fieldBorderColor: AppColors.black400,
                 height: 56,
               ),
-              SizedBox(
-                height: 24,
-              ),
+              SizedBox(height: 24.h),
               CustomTextField(
+                textEditingController: controller.passwordController,
                 labelText: AppString.password,
                 keyboardType: TextInputType.visiblePassword,
                 borderRadius: 4,
                 hintText: AppString.password,
                 fieldBorderColor: AppColors.black400,
+
+                // obscureText: true, // Enable password hiding
               ),
-              SizedBox(
-                height: 14.h,
-              ),
+              SizedBox(height: 14.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
-                      Checkbox(
-                        value: isChecked,
-                        onChanged: (bool? newValue) {
-                          setState(() {
-                            isChecked = newValue!;
-                          });
-                        },
-                        fillColor: WidgetStateProperty.resolveWith<Color>(
-                          (Set<WidgetState> states) {
-                            if (states.contains(WidgetState.selected)) {
-                              return AppColors.blue700; // Color when checked
-                            }
-                            return AppColors.white100; // Color when unchecked
+                      Obx(
+                        () => Checkbox(
+                          value: controller.isCheckedBox.value,
+                          onChanged: (bool? newValue) {
+                            controller.isCheckedBox.value = newValue!;
                           },
+                          fillColor: WidgetStateProperty.resolveWith<Color>(
+                            (Set<WidgetState> states) {
+                              if (states.contains(WidgetState.pressed)) {
+                                return AppColors.blue700;
+                              }
+                              return AppColors.white100;
+                            },
+                          ),
+                          checkColor: Colors.white,
                         ),
-                        checkColor: Colors.white,
                       ),
                       CustomText(
                         text: AppString.rememberme,
-                        color: AppColors.black400,
+                        color: AppColors.black500,
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                       ),
                     ],
                   ),
-                  TextButton(
-                    onPressed: () {
-                      Get.to(ForgotPasswordPage());
-                    },
+                  GestureDetector(
+                    onTap: () => Get.to(ForgotPasswordPage()),
                     child: CustomText(
                       text: AppString.forghotpass,
                       color: AppColors.black400,
@@ -120,16 +111,19 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 16.h,
-              ),
-              CustomButton(
-                textColor: AppColors.white300,
-                onTap: () {
-                  Get.to(BottomNavScreen());
-                },
-                title: AppString.login,
-                fillColor: AppColors.primary700,
+              SizedBox(height: 16.h),
+              Obx(
+                () => CustomButton(
+                  textColor: AppColors.white300,
+                  onTap: () => controller.isLoading.value ||
+                          !controller.isCheckedBox.value
+                      ? null
+                      : () => controller.login(),
+                  title: AppString.login,
+                  fillColor: controller.isCheckedBox.value
+                      ? AppColors.primary700
+                      : AppColors.black400, // Disabled color
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -141,9 +135,7 @@ class _LoginPageState extends State<LoginPage> {
                     fontWeight: FontWeight.w500,
                   ),
                   TextButton(
-                    onPressed: () {
-                      Get.to(SiginUpPage());
-                    },
+                    onPressed: () => Get.to(SiginUpPage()),
                     child: CustomText(
                       text: AppString.createAccount,
                       color: AppColors.blue500,
@@ -153,17 +145,12 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 30.h,
-              ),
+              SizedBox(height: 30.h),
               Row(
                 children: [
                   Expanded(
-                    child: Divider(
-                      color: AppColors.black400,
-                      thickness: 1.0,
-                    ),
-                  ),
+                      child:
+                          Divider(color: AppColors.black400, thickness: 1.0)),
                   CustomText(
                     text: AppString.orsignwith,
                     color: AppColors.black400,
@@ -171,35 +158,16 @@ class _LoginPageState extends State<LoginPage> {
                     fontWeight: FontWeight.w500,
                   ),
                   Expanded(
-                    child: Divider(
-                      color: AppColors.black400,
-                      thickness: 1.0,
-                    ),
-                  ),
+                      child:
+                          Divider(color: AppColors.black400, thickness: 1.0)),
                 ],
               ),
-              SizedBox(
-                height: 30.h,
-              ),
+              SizedBox(height: 30.h),
               CustomSvgButton(
-                svgPath: AppIcons.google,
-                height: 56,
-                onPressed: () {},
-                // backgroundColor: AppColors.white100,
-                // height: 56.h,
-                // width: double.infinity,
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
+                  svgPath: AppIcons.google, height: 56, onPressed: () {}),
+              SizedBox(height: 10.h),
               CustomSvgButton(
-                svgPath: AppIcons.apple,
-                height: 56,
-                onPressed: () {},
-                //backgroundColor: AppColors.white50,
-                // height: 56,
-                // width: 60,
-              ),
+                  svgPath: AppIcons.apple, height: 56, onPressed: () {}),
             ],
           ),
         ),

@@ -8,7 +8,6 @@ import 'package:frist_project/View/Screeens/Menu/menu_drawer.dart';
 import 'package:frist_project/View/Screeens/Profile/profile_screen.dart';
 import 'package:frist_project/View/Screeens/Study/study_screen.dart';
 import 'package:frist_project/View/Widgets/Custom_Text/custom_text.dart';
-import 'package:get/get.dart';
 
 import '../../../Utils/AppColors/app_colors.dart';
 import '../../../Utils/AppIcons/app_icons.dart';

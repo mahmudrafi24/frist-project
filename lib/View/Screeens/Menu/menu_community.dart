@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:frist_project/View/Widgets/CustomTextField/custome_text_field.dart';
 import 'package:get/get.dart';
 
 import '../../../Utils/AppColors/app_colors.dart';
@@ -8,7 +9,6 @@ import '../../../Utils/AppIcons/app_icons.dart';
 import '../../../Utils/AppImg/app_images.dart';
 import '../../../Utils/StaticString/static_string.dart';
 import '../../Widgets/Custom_Text/custom_text.dart';
-import '../../Widgets/CustomTextField/custome_text_field.dart';
 
 class MenuCommunity extends StatefulWidget {
   const MenuCommunity({super.key});
@@ -56,7 +56,7 @@ class _MenuCommunityState extends State<MenuCommunity> {
             _buildTabBar(),
             SizedBox(height: 20.h),
             CustomText(
-              text: selectedIndex == 0 ? "PN Learning" : "RN Learning",
+              text: selectedIndex == 0 ? "Newest" : "Trending",
               fontSize: 16.sp,
               fontWeight: FontWeight.w600,
               color: AppColors.black500,
@@ -102,7 +102,7 @@ class _MenuCommunityState extends State<MenuCommunity> {
                 border: Border(
                   bottom: BorderSide(
                     color: selectedIndex == index
-                        ? AppColors.primary700
+                        ? AppColors.darkBlue500
                         : Colors.transparent,
                     width: 4.0,
                   ),
@@ -113,7 +113,7 @@ class _MenuCommunityState extends State<MenuCommunity> {
                   options[index],
                   style: TextStyle(
                     color: selectedIndex == index
-                        ? AppColors.primary700
+                        ? AppColors.darkBlue500
                         : AppColors.black200,
                     fontWeight: FontWeight.w600,
                     fontSize: 16.sp,
@@ -182,36 +182,32 @@ Widget _buildLearningCard({
           textAlign: TextAlign.start,
         ),
         SizedBox(height: 10.h),
-        Row(
-          children: [
-            CustomText(
-              text: "3 answers",
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w400,
-              color: AppColors.black300,
-            ),
-            Spacer(),
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                "See more",
-                style: TextStyle(
-                  fontSize: 12,
-                  color: AppColors.primary700,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            )
-          ],
-        ),
         CustomTextField(
-          hintText: "Write your answer...",
-          suffixIcon: IconButton(
-            onPressed: onTap,
-            icon: SvgPicture.asset(AppIcons.send),
+          fieldBorderColor: AppColors.black200,
+          fillColor: AppColors.white200,
+          hintText: "Write your answer....",
+          hintStyle: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w500,
+            color: AppColors.grey500,
           ),
-          borderSideColor: AppColors.grey500,
+          suffixIcon: IconButton(
+              onPressed: onTap, icon: SvgPicture.asset(AppIcons.send)),
         )
+        // TextField(
+        //   decoration: InputDecoration(
+        //     hintText: "Write your answer...",
+        //     fillColor: AppColors.white100,
+        //     border: OutlineInputBorder(
+        //       borderRadius: BorderRadius.circular(8.r),
+        //       borderSide: BorderSide(color: AppColors.grey500),
+        //     ),
+        //     suffixIcon: IconButton(
+        //       onPressed: onTap,
+        //       icon: SvgPicture.asset(AppIcons.send),
+        //     ),
+        //   ),
+        // )
       ],
     ),
   );

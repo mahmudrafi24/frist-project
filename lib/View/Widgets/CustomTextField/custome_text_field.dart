@@ -58,7 +58,7 @@ class CustomTextField extends StatefulWidget {
   final double borderRadius;
   final Color fieldBorderColor;
   final Color focusBorderColor;
-  final Color? borderSideColor; // ✅ Optional custom border color
+  final Color? borderSideColor; //  Optional custom border color
   final void Function(String)? onChanged;
   final Function(String)? onSubmit;
   final bool isPassword;

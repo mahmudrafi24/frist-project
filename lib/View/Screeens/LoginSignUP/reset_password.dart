@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:frist_project/View/Screeens/LoginSignUP/login_page.dart';
+import 'package:frist_project/View/Screeens/LoginSignUP/Login/login_page.dart';
 import 'package:get/get.dart';
 
 import '../../../Utils/AppColors/app_colors.dart';
