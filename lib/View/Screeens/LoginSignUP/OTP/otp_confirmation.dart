@@ -1,16 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:frist_project/View/Screeens/LoginSignUP/reset_password.dart';
 import 'package:get/get.dart';
+import '../Login/login_page.dart';
+import 'controller/otp_controller.dart';
+import '../../../../Utils/AppColors/app_colors.dart';
+import '../../../../Utils/StaticString/static_string.dart';
+import '../../../Widgets/Custom_Button/custom_button.dart';
+import '../../../Widgets/Custom_Text/custom_text.dart';
 
-import '../../../Utils/AppColors/app_colors.dart';
-import '../../../Utils/StaticString/static_string.dart';
-import '../../Widgets/Custom_Button/custom_button.dart';
-import '../../Widgets/Custom_Text/custom_text.dart';
+class RegisterOtpConfirmScreen extends StatefulWidget {
+  final String email;
+  const RegisterOtpConfirmScreen({Key? key, required this.email}) : super(key: key);
 
-class OtpAuthentication extends StatelessWidget {
-  const OtpAuthentication({super.key});
+  @override
+  State<RegisterOtpConfirmScreen> createState() => _RegisterOtpConfirmScreenState();
+}
+
+class _RegisterOtpConfirmScreenState extends State<RegisterOtpConfirmScreen> {
+  final OtpController _otpController = Get.put(OtpController());
+
+  @override
+  void initState() {
+    super.initState();
+    _otpController.updateEmail(widget.email);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,60 +37,48 @@ class OtpAuthentication extends StatelessWidget {
           fontWeight: FontWeight.w700,
           color: AppColors.primary700,
         ),
-        titleSpacing: -7,
         backgroundColor: AppColors.white100,
       ),
       backgroundColor: AppColors.white100,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(left: 20, right: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 20.h,
-              ),
+              SizedBox(height: 20.h),
               CustomText(
-                text: AppString.passwordRecovery,
+                text: "OTP for Confirm Account",
                 fontSize: 24,
                 fontWeight: FontWeight.w600,
                 color: AppColors.primary700,
-                maxLines: 2,
-                textAlign: TextAlign.start,
               ),
-              SizedBox(
-                height: 20.h,
-              ),
+              SizedBox(height: 20.h),
               CustomText(
-                text: AppString.authCodesent,
+                text: "${AppString.authCodesent} ${_otpController.email}",
                 fontSize: 12,
                 fontWeight: FontWeight.w500,
                 color: AppColors.black800,
+                maxLines: 3,
                 textAlign: TextAlign.start,
-                maxLines: 2,
               ),
-              SizedBox(
-                height: 24.h,
-              ),
+              SizedBox(height: 24.h),
 
-              /// OTP Box
               OtpTextField(
-                numberOfFields: 4,
+                numberOfFields: 6,
                 borderColor: AppColors.black400,
                 showFieldAsBox: true,
                 focusedBorderColor: AppColors.black400,
                 borderRadius: BorderRadius.circular(4),
                 enabledBorderColor: AppColors.otpBoxColor,
-                fieldWidth: 56,
-                margin: EdgeInsets.only(left: 20),
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-              ),
-              SizedBox(
-                height: 16.h,
-              ),
-              Row(
+                fieldWidth: 40,
+                margin: const EdgeInsets.only(left: 20),
+                onSubmit: _otpController.updateOtpCode,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
+              ),
+              SizedBox(height: 16.h),
+              Row(
                 children: [
                   CustomText(
                     text: AppString.dontreceived,
@@ -95,13 +97,18 @@ class OtpAuthentication extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 20.h,
-              ),
+              SizedBox(height: 20.h),
               CustomButton(
                 textColor: AppColors.white300,
-                onTap: () {
-                  Get.to(ResetPassword());
+                onTap: () async {
+                  await _otpController.verifyOtpCode();
+                  if (_otpController.isValid) {
+                    Get.to(() => LoginPage());
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Invalid OTP code')),
+                    );
+                  }
                 },
                 title: AppString.verify,
                 fillColor: AppColors.primary700,

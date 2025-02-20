@@ -46,8 +46,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                 fontSize: 24,
                 fontWeight: FontWeight.w600,
                 color: AppColors.primary700,
-                maxLines: 2,
-                textAlign: TextAlign.start,
+
               ),
               SizedBox(
                 height: 20.h,
@@ -57,6 +56,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
                 color: AppColors.black800,
+                maxLines: 3,
+                textAlign: TextAlign.start,
               ),
               SizedBox(
                 height: 28.h,
