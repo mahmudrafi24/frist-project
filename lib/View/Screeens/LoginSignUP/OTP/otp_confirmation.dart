@@ -11,7 +11,7 @@ import '../../../Widgets/Custom_Text/custom_text.dart';
 
 class RegisterOtpConfirmScreen extends StatefulWidget {
   final String email;
-  const RegisterOtpConfirmScreen({Key? key, required this.email}) : super(key: key);
+  const RegisterOtpConfirmScreen({super.key, required this.email});
 
   @override
   State<RegisterOtpConfirmScreen> createState() => _RegisterOtpConfirmScreenState();

@@ -70,12 +70,12 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
 
       /// Curved Bottom Navigation Bar
       bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: AppColors.bottomnavBg,
+        backgroundColor: Colors.transparent,
         buttonBackgroundColor: AppColors.primary700,
         color: AppColors.white100,
         animationCurve: Curves.easeOut,
-        animationDuration: Duration(milliseconds: 200),
-        height: 60,
+        animationDuration: Duration(milliseconds: 500),
+        height: 65,
         index: _currentIndex,
         items: List.generate(5, (index) {
           bool isActive = _currentIndex == index;
@@ -91,8 +91,8 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
                         AppIcons.materialWhite,
                         AppIcons.profileWhite
                       ][index],
-                      height: 24,
-                      width: 24,
+                      height: 26,
+                      width: 26,
                     )
                   : SvgPicture.asset(
                       [
@@ -102,13 +102,13 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
                         AppIcons.material,
                         AppIcons.profile
                       ][index],
-                      height: 24,
-                      width: 24,
+                      height: 26,
+                      width: 26,
                     ),
               CustomText(
                 text: ["Home", "Study", "Exam", "Material", "Profile"][index],
-                fontSize: 12,
-                fontWeight: FontWeight.w500,
+                fontSize: isActive ? 12 : 12,
+                fontWeight: FontWeight.w400,
                 color: isActive ? AppColors.white100 : AppColors.black800,
               ),
             ],

@@ -1,15 +1,18 @@
 import 'dart:convert';
-import 'package:frist_project/View/Screeens/LoginSignUP/Login/login_page.dart';
 import 'package:get/get.dart';
+
+import '../../Reset_Password/reset_password.dart';
 
 class OtpController extends GetxController {
   final _otpCode = ''.obs;
   final _email = ''.obs;
   final _isValid = false.obs;
+  final _token = ''.obs; // Store the verification token
 
   String get otpCode => _otpCode.value;
   String get email => _email.value;
   bool get isValid => _isValid.value;
+  String get token => _token.value; // Get verification token
 
   void updateOtpCode(String otpCode) {
     _otpCode.value = otpCode;
@@ -32,10 +35,13 @@ class OtpController extends GetxController {
         headers: {'Content-Type': 'application/json'},
       );
 
-      if (response.statusCode == 200) {
+      if (response.statusCode == 200 && response.body['success'] == true) {
         _isValid.value = true;
+        _token.value = response.body['data']; // Store the verification token
         print("OTP verified successfully!");
-        Get.to(()=> LoginPage());
+
+        // Navigate to Reset Password Page, passing the token
+        Get.to(() => ResetPassword(token: _token.value));
       } else {
         _isValid.value = false;
         print("OTP verification failed. ${response.body}");

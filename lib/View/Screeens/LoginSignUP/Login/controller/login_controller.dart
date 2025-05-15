@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:frist_project/Utils/AppColors/app_colors.dart';
+import '../../../BottomNav/bottom_nav.dart';
 import '../../../Home/home_screen.dart';
 
 class LoginController extends GetxController {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  
+
   var isLoading = false.obs;
   var isCheckedBox = false.obs; // Checkbox state
   final GetConnect _getConnect = GetConnect();
@@ -35,8 +36,10 @@ class LoginController extends GetxController {
     isLoading.value = true;
 
     try {
+      print("Logging in with email: ${emailController.text}");
+
       final response = await _getConnect.post(
-        "http://192.168.10.13:7000/api/v1/auth/login",
+        "http://10.0.80.49:6000/api/v1/auth/login",
         {
           "email": emailController.text,
           "password": passwordController.text,
@@ -46,7 +49,7 @@ class LoginController extends GetxController {
       print("Response Status Code: ${response.statusCode}");
       print("Response Body: ${response.body}");
 
-      if (response.statusCode == 200) {
+      if (response.statusCode == 200 && response.body != null) {
         Get.snackbar(
           "Success",
           "Login successful!",
@@ -54,13 +57,11 @@ class LoginController extends GetxController {
           colorText: AppColors.white100,
         );
 
-        // Navigate to the home page after login
-        Get.offAll(() => HomeScreen());
+        Get.to(() => BottomNavScreen());
       } else {
-        print("Error: ${response.body}");
         Get.snackbar(
           "Error",
-          response.body['message'] ?? "Invalid credentials",
+          response.body?['message'] ?? "Invalid credentials",
           backgroundColor: AppColors.red600,
           colorText: AppColors.white100,
         );

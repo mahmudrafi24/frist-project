@@ -135,7 +135,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
               borderRadius: BorderRadius.circular(widget.borderRadius),
               borderSide: BorderSide(
                 color: widget.borderSideColor ??
-                    widget.fieldBorderColor, // ✅ Uses custom color if provided
+                    widget.fieldBorderColor, //  Uses custom color if provided
                 width: 1.0,
               ),
               gapPadding: 0,
@@ -144,7 +144,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
               borderRadius: BorderRadius.circular(widget.borderRadius),
               borderSide: BorderSide(
                 color: widget.borderSideColor ??
-                    widget.focusBorderColor, // ✅ Uses custom color if provided
+                    widget.focusBorderColor, //  Uses custom color if provided
                 width: 1.0,
               ),
               gapPadding: 0,
@@ -153,7 +153,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
               borderRadius: BorderRadius.circular(widget.borderRadius),
               borderSide: BorderSide(
                 color: widget.borderSideColor ??
-                    widget.fieldBorderColor, // ✅ Uses custom color if provided
+                    widget.fieldBorderColor, //  Uses custom color if provided
                 width: 1.0,
               ),
               gapPadding: 0,

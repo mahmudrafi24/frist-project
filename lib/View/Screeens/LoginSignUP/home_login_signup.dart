@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:frist_project/Core/AppRoute/app_route.dart';
 import 'package:frist_project/Utils/AppColors/app_colors.dart';
 import 'package:frist_project/Utils/AppImg/app_images.dart';
 import 'package:frist_project/View/Screeens/LoginSignUP/Login/login_page.dart';
@@ -59,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     CustomButton(
                         onTap: () {
-                          Get.to(LoginPage());
+                          Get.toNamed(AppRoute.loginScreen);
                         },
                         height: 45.h,
                         width: 370.w,
@@ -71,7 +72,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     CustomButton(
                         onTap: () {
-                          Get.to(() => SiginUpPage());
+                          Get.toNamed(AppRoute.signUpScreen);
                         },
                         height: 45.h,
                         width: 370.w,

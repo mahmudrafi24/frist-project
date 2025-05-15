@@ -7,11 +7,13 @@ import 'package:frist_project/View/Widgets/Custom_Button/custom_button.dart';
 import 'package:frist_project/View/Widgets/Custom_Text/custom_text.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../../../Utils/AppColors/app_colors.dart';
 
 class OnboardingScreen extends StatefulWidget {
+  const OnboardingScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _OnboardingScreenState createState() => _OnboardingScreenState();
 }
 
@@ -68,13 +70,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             left: 0,
             right: 0,
             child: Container(
-              height: 300.h,
+              height: 310.h,
               padding: EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: AppColors.white600.withOpacity(0.5),
+                color: AppColors.white600.withAlpha(128),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.white100.withOpacity(0.7),
+                    color: AppColors.white100.withAlpha(172),
                     blurRadius: 1,
                     spreadRadius: 1,
                   ),
@@ -96,7 +98,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       color: AppColors.black800,
                     ),
                   ),
-                  SizedBox(height: 31.h),
+                  SizedBox(height: 25.h),
                   CustomText(
                     text: AppString.paragraph,
                     fontWeight: FontWeight.w400,
@@ -105,7 +107,25 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     textAlign: TextAlign.start,
                     maxLines: 5,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 15.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(
+                      3,
+                      (index) => Container(
+                        margin: EdgeInsets.symmetric(horizontal: 4),
+                        width: 32,
+                        height: 8,
+                        decoration: BoxDecoration(
+                          color: _currentPage == index
+                              ? AppColors.black400
+                              : AppColors.white800,
+                          borderRadius: BorderRadius.circular(4.5),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 15.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -125,24 +145,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           fillColor: AppColors.primary500,
                           textColor: AppColors.white300),
                     ],
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(
-                      3,
-                      (index) => Container(
-                        margin: EdgeInsets.symmetric(horizontal: 4),
-                        width: 32,
-                        height: 8,
-                        decoration: BoxDecoration(
-                          color: _currentPage == index
-                              ? AppColors.black400
-                              : AppColors.white800,
-                          borderRadius: BorderRadius.circular(4.5),
-                        ),
-                      ),
-                    ),
                   ),
                 ],
               ),

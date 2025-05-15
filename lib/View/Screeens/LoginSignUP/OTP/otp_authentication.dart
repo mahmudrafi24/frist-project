@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:frist_project/View/Screeens/LoginSignUP/reset_password.dart';
+import 'package:frist_project/View/Screeens/LoginSignUP/Reset_Password/reset_password.dart';
 import 'package:get/get.dart';
 
 import '../../../../Utils/AppColors/app_colors.dart';
 import '../../../../Utils/StaticString/static_string.dart';
 import '../../../Widgets/Custom_Button/custom_button.dart';
 import '../../../Widgets/Custom_Text/custom_text.dart';
-import '../OTP_Register_Confirmation/controller/otp_controller.dart';
+import 'controller/otp_controller.dart';
 
 class OtpAuthentication extends StatefulWidget {
-  final String email;
-  const OtpAuthentication({super.key, required this.email});
+  final String? email;
+  const OtpAuthentication({super.key,  this.email});
 
   @override
   State<OtpAuthentication> createState() => _OtpAuthenticationState();
@@ -24,7 +24,7 @@ class _OtpAuthenticationState extends State<OtpAuthentication> {
   @override
   void initState() {
     super.initState();
-    _otpController.updateEmail(widget.email);
+    _otpController.updateEmail(widget.email!);
   }
   @override
   Widget build(BuildContext context) {
@@ -103,7 +103,7 @@ class _OtpAuthenticationState extends State<OtpAuthentication> {
                 onTap: () async {
                   await _otpController.verifyOtpCode();
                   if (_otpController.isValid) {
-                    Get.to(() => LoginPage());
+                    Get.offAll(() => ResetPassword(token: _otpController.token));
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(content: Text('Invalid OTP code')),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:frist_project/Utils/AppColors/app_colors.dart';
-import '../../otp_confirmation/otp_confirmation.dart';
+import '../../OTP/otp_confirmation.dart';
 
 class SignUpController extends GetxController {
   final nameController = TextEditingController();
@@ -57,7 +57,7 @@ class SignUpController extends GetxController {
           backgroundColor: AppColors.green600,
           colorText: AppColors.white100,
         );
-        Get.to(() => RegisterOtpConsfirmScreen());
+        Get.to(() => RegisterOtpConfirmScreen(email: emailController.text,));
         return response.body ?? {}; // Return an empty map if body is null
       } else {
         // If the response body is null or empty, avoid calling '[]' on it

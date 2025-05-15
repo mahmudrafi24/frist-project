@@ -30,233 +30,239 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.white100,
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.only(left: 20, right: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 16.h,
-              ),
-              CustomTextField(
-                labelText: AppString.searcHere,
-                suffixIcon: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: SvgPicture.asset(
-                    AppIcons.search,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 16.h,
+                ),
+                CustomTextField(
+                  labelText: AppString.searcHere,
+                  suffixIcon: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: SvgPicture.asset(
+                      AppIcons.search,
+                    ),
                   ),
-                ),
-                borderRadius: 8,
-                height: 40,
-                onTapClick: () {
-                  SearchScreen();
-                },
-              ),
-              SizedBox(
-                height: 12.h,
-              ),
-              CustomText(
-                text: AppString.qoftheday,
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-                color: AppColors.black400,
-              ),
-              SizedBox(
-                height: 15.h,
-              ), // Declare outside StatefulBuilder to maintain state
-
-              Container(
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  color: AppColors.primary700, // Background color
-                  borderRadius: BorderRadius.circular(8), // 8 Border Radius
-                ),
-                child: StatefulBuilder(
-                  builder: (context, setState) {
-                    return Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomText(
-                          text: AppString.question,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.white300,
-                          maxLines: 5,
-                          textAlign: TextAlign.start,
-                        ),
-                        SizedBox(height: 12.h),
-
-                        // List of answers
-                        ...[
-                          AppString.ans1,
-                          AppString.ans2,
-                          AppString.ans3,
-                          AppString.ans4
-                        ].map(
-                          (text) => RadioListTile<String>(
-                            title: CustomText(
-                              text: text, // Use the text directly
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.white300,
-                            ),
-                            value: text,
-                            groupValue: selectedOption,
-                            onChanged: (String? value) {
-                              setState(() {
-                                selectedOption = value;
-                              });
-                            },
-                            activeColor: Colors.white,
-                          ),
-                        ),
-                        CustomButton(
-                          fillColor: AppColors.white400,
-                          onTap: () {},
-                          title: AppString.submit,
-                          textColor: AppColors.black500,
-                        )
-                      ],
-                    );
+                  borderRadius: 8,
+                  height: 40,
+                  onTapClick: () {
+                    SearchScreen();
                   },
                 ),
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              CustomText(
-                text: AppString.category,
-                color: AppColors.black600,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
+                SizedBox(
+                  height: 12.h,
+                ),
+                CustomText(
+                  text: AppString.qoftheday,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  color: AppColors.black400,
+                ),
+                SizedBox(
+                  height: 15.h,
+                ), // Declare outside StatefulBuilder to maintain state
 
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(iconsList.length ?? 0, (index) {
-                    return Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 28.w, vertical: 15.h),
+                Container(
+                  padding: EdgeInsets.all(16.0),
+                  decoration: BoxDecoration(
+                    color: AppColors.primary700, // Background color
+                    borderRadius: BorderRadius.circular(8), // 8 Border Radius
+                  ),
+                  child: StatefulBuilder(
+                    builder: (context, setState) {
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          CustomText(
+                            text: AppString.question,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.white300,
+                            maxLines: 5,
+                            textAlign: TextAlign.start,
+                          ),
+                          SizedBox(height: 12.h),
 
-                          // height: 70,
-                          // width: 70,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: AppColors.circleBackgroundColor),
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: SvgPicture.asset(
-                              iconsList[index],
-                              fit: BoxFit.fill,
+                          // List of answers
+                          ...[
+                            AppString.ans1,
+                            AppString.ans2,
+                            AppString.ans3,
+                            AppString.ans4
+                          ].map(
+                            (text) => RadioListTile<String>(
+                              title: CustomText(
+                                text: text, // Use the text directly
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                                color: AppColors.white300,
+                              ),
+                              value: text,
+                              groupValue: selectedOption,
+                              onChanged: (String? value) {
+                                setState(() {
+                                  selectedOption = value;
+                                });
+                              },
+                              activeColor: Colors.white,
                             ),
                           ),
-                        ),
-                        CustomText(
-                          text: AppString.mhealth,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.black500,
-                        )
-                      ],
-                    );
-                  }),
+                          CustomButton(
+                            fillColor: AppColors.white400,
+                            onTap: () {},
+                            title: AppString.submit,
+                            textColor: AppColors.black500,
+                          )
+                        ],
+                      );
+                    },
+                  ),
                 ),
-              ),
+                SizedBox(
+                  height: 10.h,
+                ),
+                CustomText(
+                  text: AppString.category,
+                  color: AppColors.black600,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                ),
 
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //   children: [
-              //     Column(
-              //       children: [
-              //         Container(
-              //           height: 70,
-              //           width: 70,
-              //           decoration: BoxDecoration(
-              //               borderRadius: BorderRadius.circular(50),
-              //               color: AppColors.circleBackgroundColor),
-              //           child: SvgPicture.asset(
-              //             AppIcons.men,
-              //             fit: BoxFit.fitHeight,
-              //           ),
-              //         ),
-              //         CustomText(
-              //           text: AppString.mhealth,
-              //           fontSize: 12,
-              //           fontWeight: FontWeight.w500,
-              //           color: AppColors.black500,
-              //         )
-              //       ],
-              //     ),
-              //     Column(
-              //       children: [
-              //         Container(
-              //           height: 70,
-              //           width: 70,
-              //           decoration: BoxDecoration(
-              //               borderRadius: BorderRadius.circular(50),
-              //               color: AppColors.circleBackgroundColor),
-              //           child: SvgPicture.asset(
-              //             AppIcons.women,
-              //             fit: BoxFit.fitHeight,
-              //           ),
-              //         ),
-              //         CustomText(
-              //           text: AppString.whealth,
-              //           fontSize: 12,
-              //           fontWeight: FontWeight.w500,
-              //           color: AppColors.black500,
-              //         )
-              //       ],
-              //     ),
-              //     Column(
-              //       children: [
-              //         Container(
-              //           height: 70,
-              //           width: 70,
-              //           decoration: BoxDecoration(
-              //               borderRadius: BorderRadius.circular(50),
-              //               color: AppColors.circleBackgroundColor),
-              //           child: SvgPicture.asset(
-              //             AppIcons.mental_health,
-              //             fit: BoxFit.fitHeight,
-              //           ),
-              //         ),
-              //         CustomText(
-              //           text: AppString.mentalhealth,
-              //           fontSize: 12,
-              //           fontWeight: FontWeight.w500,
-              //           color: AppColors.black500,
-              //         )
-              //       ],
-              //     ),
-              //     Column(
-              //       children: [
-              //         Container(
-              //           height: 70,
-              //           width: 70,
-              //           decoration: BoxDecoration(
-              //               borderRadius: BorderRadius.circular(50),
-              //               color: AppColors.circleBackgroundColor),
-              //           child: SvgPicture.asset(
-              //             AppIcons.pregnancy,
-              //             fit: BoxFit.cover,
-              //           ),
-              //         ),
-              //         CustomText(
-              //           text: AppString.pregnancy,
-              //           fontSize: 12,
-              //           fontWeight: FontWeight.w500,
-              //           color: AppColors.black500,
-              //         ),
-              //       ],
-              //     ),
-              //   ],
-              // ),
-            ],
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: List.generate(iconsList.length, (index) {
+                      return Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 28.w, vertical: 15.h),
+
+                            // height: 70,
+                            // width: 70,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: AppColors.circleBackgroundColor),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: SvgPicture.asset(
+                                iconsList[index],
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                          CustomText(
+                            text: AppString.mhealth,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.black500,
+                          )
+                        ],
+                      );
+                    }),
+                  ),
+                ),
+                SizedBox(
+                  height: 85.h,
+                ),
+
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   children: [
+                //     Column(
+                //       children: [
+                //         Container(
+                //           height: 70,
+                //           width: 70,
+                //           decoration: BoxDecoration(
+                //               borderRadius: BorderRadius.circular(50),
+                //               color: AppColors.circleBackgroundColor),
+                //           child: SvgPicture.asset(
+                //             AppIcons.men,
+                //             fit: BoxFit.fitHeight,
+                //           ),
+                //         ),
+                //         CustomText(
+                //           text: AppString.mhealth,
+                //           fontSize: 12,
+                //           fontWeight: FontWeight.w500,
+                //           color: AppColors.black500,
+                //         )
+                //       ],
+                //     ),
+                //     Column(
+                //       children: [
+                //         Container(
+                //           height: 70,
+                //           width: 70,
+                //           decoration: BoxDecoration(
+                //               borderRadius: BorderRadius.circular(50),
+                //               color: AppColors.circleBackgroundColor),
+                //           child: SvgPicture.asset(
+                //             AppIcons.women,
+                //             fit: BoxFit.fitHeight,
+                //           ),
+                //         ),
+                //         CustomText(
+                //           text: AppString.whealth,
+                //           fontSize: 12,
+                //           fontWeight: FontWeight.w500,
+                //           color: AppColors.black500,
+                //         )
+                //       ],
+                //     ),
+                //     Column(
+                //       children: [
+                //         Container(
+                //           height: 70,
+                //           width: 70,
+                //           decoration: BoxDecoration(
+                //               borderRadius: BorderRadius.circular(50),
+                //               color: AppColors.circleBackgroundColor),
+                //           child: SvgPicture.asset(
+                //             AppIcons.mental_health,
+                //             fit: BoxFit.fitHeight,
+                //           ),
+                //         ),
+                //         CustomText(
+                //           text: AppString.mentalhealth,
+                //           fontSize: 12,
+                //           fontWeight: FontWeight.w500,
+                //           color: AppColors.black500,
+                //         )
+                //       ],
+                //     ),
+                //     Column(
+                //       children: [
+                //         Container(
+                //           height: 70,
+                //           width: 70,
+                //           decoration: BoxDecoration(
+                //               borderRadius: BorderRadius.circular(50),
+                //               color: AppColors.circleBackgroundColor),
+                //           child: SvgPicture.asset(
+                //             AppIcons.pregnancy,
+                //             fit: BoxFit.cover,
+                //           ),
+                //         ),
+                //         CustomText(
+                //           text: AppString.pregnancy,
+                //           fontSize: 12,
+                //           fontWeight: FontWeight.w500,
+                //           color: AppColors.black500,
+                //         ),
+                //       ],
+                //     ),
+                //   ],
+                // ),
+              ],
+            ),
           ),
         ),
       ),

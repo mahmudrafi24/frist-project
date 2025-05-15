@@ -10,7 +10,7 @@ class AppString {
   ///<====================== These are for the Login Screen ======================>
   static const String welcomeback = "Welcome Back";
   static const String putInformationtoSignin =
-      "Please put your information below to sign in your account";
+      "Please put your information below to sign in your account: ";
   static const String donthaveAccount = "Don't have an account?";
 
   static const String createAnaccount = "Create a new account";
@@ -35,7 +35,7 @@ class AppString {
   static const String otpAuth = "OTP Authentication";
   static const String sendcode = "Send Code";
   static const String authCodesent =
-      "An authentication code has been sent to your email";
+      "An authentication code has been sent to your email: ";
   static const String dontreceived = "Don't receive the code? ";
   static const String resend = "Resend";
   static const String resetPass = "Reset Password";

@@ -7,12 +7,15 @@ import 'package:frist_project/View/Widgets/Custom_Text/custom_text.dart';
 import 'package:frist_project/View/Widgets/CustomTextField/custome_text_field.dart';
 import 'package:frist_project/utils/AppColors/app_colors.dart';
 import 'package:get/get.dart';
+import '../../../../Core/AppRoute/app_route.dart';
 import '../../../../Utils/AppIcons/app_icons.dart';
 import '../../../Widgets/Custom_Button/custom_button_with_svg.dart';
 import 'controller/signup_controller.dart';
 
 class SiginUpPage extends StatelessWidget {
   final SignUpController controller = Get.put(SignUpController());
+
+  SiginUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +42,8 @@ class SiginUpPage extends StatelessWidget {
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                   color: AppColors.black800,
+                  maxLines: 2,
+                  textAlign: TextAlign.start,
                 ),
                 SizedBox(height: 28.h),
 
@@ -82,8 +87,9 @@ class SiginUpPage extends StatelessWidget {
                   //obscureText = true,
                   validator: (value) {
                     if (value!.isEmpty) return "Password cannot be empty";
-                    if (value.length < 6)
+                    if (value.length < 6) {
                       return "Password must be at least 6 characters";
+                    }
                     return null;
                   },
                 ),
@@ -113,9 +119,9 @@ class SiginUpPage extends StatelessWidget {
 
                 /// Create Account Button
                 Obx(() => CustomButton(
-                      onTap: () => controller.isLoading.value
-                          ? null
-                          : controller.signUp(),
+                      onTap: () {
+                        Get.toNamed(AppRoute.bottomeNavBar);
+                      },
                       title: controller.isLoading.value
                           ? "Signing Up..."
                           : AppString.createAccount,
